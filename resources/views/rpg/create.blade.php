@@ -4,7 +4,8 @@
 
 <!-- FORM REGISTER USER -->
 <div class="registerForm">
-    <form>
+    <form action="{{ route('rpg.store') }}" method="POST">
+        @csrf
         <label for="firstname">Votre prénom</label>
         <input type="text" name="firstname" id="firstname">
         <label for="lastname">Votre nom</label>
