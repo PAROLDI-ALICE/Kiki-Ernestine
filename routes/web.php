@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\AttributeController;
 use App\Http\Controllers\GroupController;
@@ -24,18 +23,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//INSCRIPTION
+//USER => INSCRIPTION + LOGIN
 Route::resource(
-    '/register',
-    RegisterController::class
+    '/user',
+    UserController::class
 );
 
-
-//CONNEXION
-Route::resource(
-    '/login',
-    LoginController::class
-);
 
 //CREATION PERSONNAGE
 Route::resource(
