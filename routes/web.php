@@ -19,13 +19,10 @@ use App\Http\Controllers\CharStoreController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 //USER => INSCRIPTION + LOGIN
 Route::resource(
-    '/user',
+    '/',
     UserController::class
 );
 
