@@ -9,15 +9,28 @@
 </head>
 
 <body>
-    <div class="navBar">
-        <img src="/images/logo.jpg" alt="logo" class="logo">
-        <h1>La Rotonde</h1>
-        <a href="inscription">Inscription</a>
-        <a href="connexion">Connexion</a>
-        {{-- lister les personnages + creation nouveau --}}
-        <a href="personnages">Personnages</a>
-        <a href="groupes">Groupes</a>
-    </div>
+    @guest
+        <div class="navBarNotConnex">
+            <img src="/images/logo.jpg" alt="logo" class="logo">
+            <h1>La Rotonde</h1>
+            <a href="home">Salon</a>
+            <a href="inscription">Inscription</a>
+            <a href="connexion">Connexion</a>
+        </div>
+    @endguest
+    @auth
+        <div class="navBarConnex">
+            <img src="/images/logo.jpg" alt="logo" class="logo">
+            <h1>La Rotonde</h1>
+            <a href="home">Salon</a>
+            {{-- lister les personnages + creation nouveau --}}
+            <a href="personnages">Personnages</a>
+            <a href="groupes">Groupes</a>
+            <a href="deconnexion">Déconnexion</a>
+        </div>
+    @endauth
+
+
     @yield('content')
 </body>
 <footer>&copy; Kiki Ernestine 2023</footer>
