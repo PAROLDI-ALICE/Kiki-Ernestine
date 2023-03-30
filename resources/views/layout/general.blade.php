@@ -9,7 +9,17 @@
 </head>
 
 <body>
-
+    <div class="navBar">
+        <img src="/images/logo.jpg" alt="logo" class="logo">
+        <h1>La Rotonde</h1>
+        <a href="inscription">Inscription</a>
+        <a href="connexion">Connexion</a>
+        {{-- lister les personnages + creation nouveau --}}
+        <a href="personnages">Personnages</a>
+        <a href="groupes">Groupes</a>
+    </div>
+    @yield('content')
 </body>
+<footer>&copy; Kiki Ernestine 2023</footer>
 
 </html>
