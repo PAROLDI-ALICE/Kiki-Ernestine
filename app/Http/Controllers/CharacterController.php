@@ -19,7 +19,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        //
+        return view('rpg.personnage');
     }
 
     /**
@@ -28,6 +28,7 @@ class CharacterController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -44,6 +45,7 @@ class CharacterController extends Controller
     public function edit(string $id)
     {
         //
+        return view('rpg.edit');
     }
 
     /**
