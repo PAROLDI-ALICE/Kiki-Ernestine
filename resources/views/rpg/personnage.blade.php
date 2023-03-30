@@ -31,13 +31,13 @@
             </select>
 
 
-            <ol>
+            {{-- <ol>
                 <li>Magie : {{ $random1 }}</li>
                 <li>Force : {{ $random2 }}</li>
                 <li>Agilité : {{ $random3 }}</li>
                 <li>Intelligence : {{ $random4 }}</li>
                 <li>Points de Vie : {{ $random5 }}</li>
-            </ol>
+            </ol> --}}
             <input type="submit" class="generate" value="Générer" />
 
             <input type="submit" class="submit" value="Valider" />
