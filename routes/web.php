@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\AttributeController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\CharStoreController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +23,40 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//INSCRIPTION
+Route::resource(
+    '/register',
+    RegisterController::class
+);
+
+
+//CONNEXION
+Route::resource(
+    '/login',
+    LoginController::class
+);
+
+//CREATION PERSONNAGE
+Route::resource(
+    '/character',
+    CharacterController::class
+);
+
+//ATTRIBUTS
+Route::resource(
+    '/attribute',
+    AttributeController::class
+);
+
+//GROUP
+Route::resource(
+    '/group',
+    GroupController::class
+);
+
+//CATALOGUE
+Route::resource(
+    '/charstore',
+    CharStoreController::class
+);
