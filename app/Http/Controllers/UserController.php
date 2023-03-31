@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Models\joueurs;
 
 class UserController extends Controller
 {
@@ -19,17 +20,41 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        //Formulaire de création d'un joueur
         return view('users.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $user)
     {
-        //
-        return view('users.create');
+        //Validation de la requête
+        $request->validate([
+            'firstname' => 'required|string',
+            'lastname' => 'required|string',
+            'pseudo' => 'required|string|unique:users',
+            'email' => 'required',
+            //REGEX pour le password (minimum 8 caractères et comportant une lettre, un chiffre et un symbole)
+            'password' => 'required|min:8|regex:/^(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{6,}$/',
+        ]);
+
+        //Création du Joueur
+        $user = joueurs::create();
+        //Storage DB via Model 'joueurs'
+        $user = new joueurs(
+            [
+                'Prenom' => $request->input('firstname'),
+                'Nom' => $request->input('lastname'),
+                'Pseudo' => $request->input('pseudo'),
+                'Email' => $request->input('email'),
+                'Mdp' => bcrypt($request->input('password')),
+            ]
+        );
+        //Fonction SAVE
+        $user->save();
+        //REdirect => Profil joueur
+        return redirect('users.create');
     }
 
     /**

@@ -10,8 +10,8 @@ class joueurs extends Model
     use HasFactory;
 
     private $id;
-    private $nom;
     private $prenom;
+    private $nom;
     private $pseudo;
     private $email;
     private $mdp;
