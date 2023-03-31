@@ -20,7 +20,7 @@ class GroupController extends Controller
     public function create()
     {
         //
-        return view('rpg.groupe');
+        return view('groups.groupe');
     }
 
     /**
