@@ -1,0 +1,65 @@
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    color: goldenrod;
+}
+.left {
+    display: flex;
+    justify-content: flex-start;
+}
+.right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5vw;
+    align-items: flex-end;
+    text-decoration: none;
+}
+.bigt {
+    font-size: 4rem;
+    margin-left: 5vw;
+    font-family: cursive;
+}
+.kiki {
+    width: 30vw;
+}
+.article {
+    display: flex;
+    flex-direction: row;
+}
+.text {
+    width: 40vw;
+    padding: 5vw;
+}
+footer {
+    color: goldenrod;
+    text-align: center;
+    background-color: black;
+}
+button {
+    background-color: black;
+    color: goldenrod;
+    border: none;
+    font-size: 1rem;
+}
+button:active {
+    background-color: goldenrod;
+    color: black;
+    opacity: 50%;
+}
+button:hover {
+    background-color: goldenrod;
+    color: black;
+}
+.button-link {
+    color: goldenrod;
+    text-decoration: none;
+}
+.button-link:active {
+    color: black;
+    opacity: 50%;
+}
+.button-link:hover {
+    color: black;
+}
