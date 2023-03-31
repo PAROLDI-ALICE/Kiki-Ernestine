@@ -6,6 +6,7 @@ use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\AttributeController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\CharStoreController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -20,10 +21,16 @@ use App\Http\Controllers\CharStoreController;
 */
 
 
-//USER => INSCRIPTION + LOGIN
+//USER => INSCRIPTION
 Route::resource(
     '/',
     UserController::class
+);
+
+// LOGIN
+Route::resource(
+    '/login',
+    LoginController::class
 );
 
 
