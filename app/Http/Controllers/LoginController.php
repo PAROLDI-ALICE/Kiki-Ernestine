@@ -48,17 +48,19 @@ class LoginController extends Controller
         return view('profile')->with(['user' => $user]);
     }
 
-
-
     /**
      * LOGOUT
      */
     public function goLogout(Request $request)
     {
-        //
+        //Rappel Auth (fonction interne logout de Illuminate)
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        //Redirection vers index
+        return redirect('rpg.index');
     }
-
-
 
 
     /**
