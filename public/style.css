@@ -18,7 +18,6 @@
     align-items: flex-end;
     text-decoration: none;
 }
-
 .kiki {
     height: 75vh;
 }
@@ -81,5 +80,18 @@ audio {
 @media (max-width: 500px) {
     #play-audio {
         max-width: 100%; /* Set the maximum width to 100% on smaller screens */
+    }
+    .article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+    }
+    .navBar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: black;
+        color: goldenrod;
     }
 }
