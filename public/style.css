@@ -1,3 +1,6 @@
+* {
+    margin: 0%;
+}
 .navBar {
     display: flex;
     flex-direction: row;
@@ -22,11 +25,12 @@
     font-family: cursive;
 }
 .kiki {
-    width: 30vw;
+    width: 25vw;
 }
 .article {
     display: flex;
     flex-direction: row;
+    background-color: white;
 }
 .text {
     width: 40vw;
