@@ -3,7 +3,7 @@
 @section('content')
     <!-- FORM REGISTER USER -->
     <div class="registerForm">
-        <form action="{{ route('rpg.store') }}" method="POST">
+        <form action="{{ route('store') }}" method="POST">
             @csrf
             <label for="firstname">Votre prénom</label>
             <input type="text" name="firstname" id="firstname">
