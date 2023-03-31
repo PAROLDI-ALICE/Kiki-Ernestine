@@ -27,15 +27,15 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, $user)
+    public function store(Request $request)
     {
         //Validation de la requête
         $request->validate([
             'firstname' => 'required|string',
             'lastname' => 'required|string',
-            'pseudo' => 'required|string|unique:users',
+            'pseudo' => 'required|string|unique:joueurs',
             'email' => 'required',
-            //REGEX pour le password (minimum 8 caractères et comportant une lettre, un chiffre et un symbole)
+            //REGEX pour le password (minimum 8 caractères et comportant une lettre, un chiffre et un symbole)php
             'password' => 'required|min:8|regex:/^(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{6,}$/',
         ]);
 
@@ -51,10 +51,11 @@ class UserController extends Controller
                 'Mdp' => bcrypt($request->input('password')),
             ]
         );
+        dd($user);
         //Fonction SAVE
-        $user->save();
-        //REdirect => Profil joueur
-        return redirect('users.create');
+        // $user->save();
+        // //Redirect => Profil joueur
+        // return redirect('rpg.index');
     }
 
     /**
