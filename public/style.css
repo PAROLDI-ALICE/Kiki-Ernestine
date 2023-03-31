@@ -3,7 +3,6 @@
 }
 .navBar {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     background-color: black;
     color: goldenrod;
@@ -19,17 +18,13 @@
     align-items: flex-end;
     text-decoration: none;
 }
-.bigt {
-    font-size: 4rem;
-    margin-left: 5vw;
-    font-family: cursive;
-}
+
 .kiki {
-    width: 25vw;
+    height: 75vh;
 }
 .article {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     background-color: white;
 }
 .text {
@@ -45,7 +40,7 @@ button {
     background-color: black;
     color: goldenrod;
     border: none;
-    font-size: 1rem;
+    font-size: 1.25em;
 }
 button:active {
     background-color: goldenrod;
@@ -66,4 +61,25 @@ button:hover {
 }
 .button-link:hover {
     color: black;
+}
+.rotonde {
+    max-height: 10vh;
+    margin: 5vh;
+}
+#play-audio {
+    cursor: pointer;
+    width: 100%;
+    max-width: 500px; /* Set a maximum width for the image */
+}
+
+audio {
+    display: block;
+    width: 100%;
+}
+
+/* Media query for screens smaller than 500px */
+@media (max-width: 500px) {
+    #play-audio {
+        max-width: 100%; /* Set the maximum width to 100% on smaller screens */
+    }
 }
