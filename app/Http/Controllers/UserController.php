@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\joueurs;
+use app\Models\User;
 
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Page d'accueil
      */
     public function index()
     {
@@ -16,7 +16,7 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Formulaire inscription joueur
      */
     public function create()
     {
@@ -25,9 +25,9 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Storage des valeurs des inputs dans la DB
      */
-    public function store(Request $request)
+    public function store(Request $request) //"{{ route('store') }}" du create.blade
     {
         //Validation de la requête
         $request->validate([
@@ -39,23 +39,21 @@ class UserController extends Controller
             'password' => 'required|min:8|regex:/^(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{6,}$/',
         ]);
 
-        //Création du Joueur
-        $user = joueurs::create();
-        //Storage DB via Model 'joueurs'
-        $user = new joueurs(
+        //Création du Joueur & storage DB via Model 'joueurs'
+        $user = User::create(
             [
-                'Prenom' => $request->input('firstname'),
-                'Nom' => $request->input('lastname'),
-                'Pseudo' => $request->input('pseudo'),
-                'Email' => $request->input('email'),
-                'Mdp' => bcrypt($request->input('password')),
+                'firstname' => $request->input('firstname'),
+                'lastname' => $request->input('lastname'),
+                'pseudo' => $request->input('pseudo'),
+                'email' => $request->input('email'),
+                'password' => bcrypt($request->input('password')),
             ]
         );
         dd($user);
         //Fonction SAVE
-        // $user->save();
-        // //Redirect => Profil joueur
-        // return redirect('rpg.index');
+        $user->save();
+        //Redirect => Profil joueur
+        return redirect()->route('rpg.index');
     }
 
     /**
