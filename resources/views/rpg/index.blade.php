@@ -28,5 +28,10 @@
                 nuit pour essayer de communiquer avec les morts.</p><br /><br />
             <h2>Choisissez votre personnage de la vie de Kiki puis créez son cercle social dans le menu.</h2>
         </div>
+        <div class="media">
+            <img src="{{ asset('gramo.png') }}" alt="gramo" id="play-audio" />
+            <audio id="audio" src="{{ asset('Kiki.mp3') }}" controls></audio>
+        </div>
+
     </div>
 @endsection
