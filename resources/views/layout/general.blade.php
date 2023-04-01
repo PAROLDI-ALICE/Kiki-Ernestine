@@ -39,8 +39,9 @@
         </div>
     @endauth
 
-
-    @yield('content')
+    <div class="content">
+        @yield('content')
+    </div>
 </body>
 <footer>&copy; Kiki Ernestine 2023</footer>
 

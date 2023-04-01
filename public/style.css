@@ -68,18 +68,36 @@ button:hover {
 #play-audio {
     cursor: pointer;
     width: 100%;
-    max-width: 500px; /* Set a maximum width for the image */
+    max-width: 500px;
 }
 
 audio {
     display: block;
     width: 100%;
 }
+.content {
+    min-height: 70vh;
+}
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    background-image: url("bgd.png");
+    background-position: top;
+    background-size: cover;
+    min-height: 70vh;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    max-width: 40vw;
+}
 
 /* Media query for screens smaller than 500px */
 @media (max-width: 500px) {
     #play-audio {
-        max-width: 100%; /* Set the maximum width to 100% on smaller screens */
+        max-width: 100%;
     }
     .article {
         display: flex;

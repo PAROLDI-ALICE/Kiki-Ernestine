@@ -3,6 +3,8 @@
 @section('content')
     <!-- FORM CONNECT USER -->
     <div class="registerForm">
+        <div class="gap">
+        </div>
         <form action="{{ route('index') }}" method="GET">
             @csrf
             <label for="email">Votre email</label>
@@ -11,5 +13,7 @@
             <input type="password" name="password" id="password">
             <input type="submit" class="submit" value="Valider" />
         </form>
+        <div class="gap">
+        </div>
     </div>
 @endsection
