@@ -49,18 +49,19 @@ class UserController extends Controller
                 'password' => bcrypt($request->input('password')),
             ]
         );
-        dd($user);
+
         //Fonction SAVE
         $user->save();
         //Redirect => Profil joueur
-        return redirect()->route('rpg.index');
+        return redirect()->route('users.welcome');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $user)
     {
+
         //
     }
 

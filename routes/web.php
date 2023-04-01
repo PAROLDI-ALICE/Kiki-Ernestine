@@ -33,6 +33,11 @@ Route::resource(
     LoginController::class
 );
 
+// LOGGED IN
+Route::resource(
+    '/welcome',
+    LoginController::class
+);
 
 //CREATION PERSONNAGE
 Route::resource(

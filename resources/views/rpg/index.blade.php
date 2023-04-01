@@ -26,7 +26,8 @@
                 cimetières
                 la
                 nuit pour essayer de communiquer avec les morts.</p><br /><br />
-            <h2>Choisissez votre personnage de la vie de Kiki puis créez son cercle social dans le menu.</h2>
+            <h2> En explorant le site, nous vous encourageons à choisir un personnage pour vous guider dans votre voyage.
+                Suivrez-vous les traces de Kiki ?</h2>
         </div>
         <div class="media">
             <img src="{{ asset('gramo.png') }}" alt="gramo" id="play-audio" />

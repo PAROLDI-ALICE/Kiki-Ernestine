@@ -5,7 +5,7 @@
     <div class="registerForm">
         <div class="gap">
         </div>
-        <form action="{{ route('index') }}" method="GET">
+        <form action="{{ route('welcome') }}" method="GET">
             @csrf
             <label for="email">Votre email</label>
             <input type="email" name="email" id="email">
