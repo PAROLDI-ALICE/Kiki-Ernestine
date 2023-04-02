@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
 //Import of  the Auth facade 
 use Illuminate\Support\Facades\Auth;
 
@@ -13,13 +12,21 @@ class LoginController extends Controller
     /**
      * LOGIN 
      */
-    public function verifyLogin(Request $request)
+
+    //Form de connection d'un User inscrit
+    public function index()
+    {
+        return view('users.connexForm');
+    }
+
+    //Process d'autehntification
+    public function create(Request $request)
     {
         //Captation des infos USER //GET
         $data = $request->validate([
-            'firstname' => ['required', 'firstname'],
-            'lastname' => ['required', 'lastname'],
-            'pseudo' => ['required', 'pseudo'],
+            // 'firstname' => ['required', 'firstname'],
+            // 'lastname' => ['required', 'lastname'],
+            // 'pseudo' => ['required', 'pseudo'],
             'email' => ['required', 'email'],
             'password' => ['required', 'pasword']
         ]);
@@ -28,7 +35,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
         }
         //Redirect => Profil joueur (to be created)
-        return redirect()->route('userProfil');
+        return redirect()->route('users.profile');
 
         return back()->withErrors(['email' => 'Veuillez vérifier vos coordonnées.']);
     }

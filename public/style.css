@@ -85,6 +85,18 @@ audio {
     width: 100%;
 }
 
+.submit {
+    width: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px;
+    border: 1px solid goldenrod;
+    color: goldenrod;
+    font-weight: bold;
+    align-self: center;
+    border-radius: 50%;
+    padding: 15px;
+    margin-top: 2%;
+}
+
 /* footer */
 footer {
     color: goldenrod;
