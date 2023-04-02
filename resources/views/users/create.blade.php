@@ -3,7 +3,7 @@
 @section('content')
 <!-- FORM REGISTER USER -->
 <div class="registerForm">
-    <form action="{{ route('store') }}" method="POST">
+    <form action="{{ route('store') }}" method="post">
         @csrf
         <label for="firstname">Votre prénom</label>
         <input type="text" name="firstname" id="firstname">
@@ -17,5 +17,10 @@
         <input type="password" name="password" id="password">
         <input type="submit" class="submit" value="Valider" />
     </form>
+    @if($errors->any())
+    @foreach ($errors->all() as $error)
+    <p>{{ $error }}</p>
+    @endforeach
+    @endif
 </div>
 @endsection

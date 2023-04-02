@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use app\Models\User;
 
+
 class UserController extends Controller
 {
     /**
@@ -33,13 +34,13 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'firstname' => 'required|string',
             'lastname' => 'required|string',
-            'pseudo' => 'required|string|unique:joueurs',
+            'pseudo' => 'required|string|unique:users',
             'email' => 'required',
             //REGEX pour le password (minimum 8 caractères et comportant une lettre, un chiffre et un symbole)php
             'password' => 'required|min:8|regex:/^(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{6,}$/',
         ]);
 
-        //Création du Joueur & storage DB via Model 'joueurs'
+        //Création du Joueur & Storage DB via Model
         $user = User::create(
             [
                 'firstname' => $validatedData['firstname'],
@@ -47,15 +48,9 @@ class UserController extends Controller
                 'pseudo' => $validatedData['pseudo'],
                 'email' => $validatedData['email'],
                 'password' => bcrypt($validatedData['password']),
-                // 'lastname' => $request->lastname,
-                // => $request->input('lastname')
-                // 'pseudo' => $request->pseudo,
-                // 'email' => $request->email,
-                // 'password' => bcrypt($request->password),
             ]
-        )->save();
+        );
 
-        //Redirect => Profil joueur
         return redirect()->route('users.welcome');
     }
 

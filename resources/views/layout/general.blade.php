@@ -11,32 +11,32 @@
 
 <body>
     @guest
-        <div class="navBar">
-            <div class="left">
-                <img src="{{ asset('logo.png') }}" class="logo" />
-                <img src="{{ asset('titre.png') }}" class="rotonde" />
-            </div>
-            <div class="right">
-                <button><a class="button-link" href="{{ route('index') }}">Salon</a></button>
-                <button><a class="button-link" href="{{ route('create') }}">Inscription</a></button>
-                <button><a class="button-link" href="{{ route('index') }}">Connexion</a></button>
-            </div>
+    <div class="navBar">
+        <div class="left">
+            <img src="{{ asset('logo.png') }}" class="logo" />
+            <img src="{{ asset('titre.png') }}" class="rotonde" />
         </div>
+        <div class="right">
+            <button><a class="button-link" href="{{ route('index') }}">Salon</a></button>
+            <button><a class="button-link" href="{{ route('create') }}">Inscription</a></button>
+            <button><a class="button-link" href="{{ route('/login.connexFormDisplay') }}">Connexion</a></button>
+        </div>
+    </div>
     @endguest
     @auth
-        <div class="navBar">
-            <div class="left">
-                <img src="{{ asset('logo.png') }}" alt="logo" class="logo" />
-                <h1 class="bigt">La Rotonde</h1>
-            </div>
-            <div class="right">
-                <button><a class="button-link" href="{{ route('index') }}">Salon</a></button>
-                {{-- lister les personnages + creation nouveau --}}
-                <button><a class="button-link" href="{{ route('character.create') }}">Personnages</a></button>
-                <button><a class="button-link" href="{{ route('group.create') }}">Groupes</a></button>
-                <button>Déconnexion</button>
-            </div>
+    <div class="navBar">
+        <div class="left">
+            <img src="{{ asset('logo.png') }}" alt="logo" class="logo" />
+            <h1 class="bigt">La Rotonde</h1>
         </div>
+        <div class="right">
+            <button><a class="button-link" href="{{ route('index') }}">Salon</a></button>
+            {{-- lister les personnages + creation nouveau --}}
+            <button><a class="button-link" href="{{ route('character.create') }}">Personnages</a></button>
+            <button><a class="button-link" href="{{ route('group.create') }}">Groupes</a></button>
+            <button>Déconnexion</button>
+        </div>
+    </div>
     @endauth
 
     <div class="content">

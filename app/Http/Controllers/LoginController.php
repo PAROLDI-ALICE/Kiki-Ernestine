@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 
+
 //Import of  the Auth facade 
 use Illuminate\Support\Facades\Auth;
 
@@ -13,6 +14,12 @@ class LoginController extends Controller
     /**
      * LOGIN 
      */
+
+    public function connexFormDisplay()
+    {
+        return view('users.connexForm');
+    }
+
     public function verifyLogin(Request $request)
     {
         //Captation des infos USER //GET
