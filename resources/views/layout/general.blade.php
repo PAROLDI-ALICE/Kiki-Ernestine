@@ -19,7 +19,7 @@
         <div class="right">
             <button><a class="button-link" href="{{ route('index') }}">Salon</a></button>
             <button><a class="button-link" href="{{ route('create') }}">Inscription</a></button>
-            <button><a class="button-link" href="{{ route('/login.connexFormDisplay') }}">Connexion</a></button>
+            <button><a class="button-link" href="{{ route('login.index') }}">Connexion</a></button>
         </div>
     </div>
     @endguest
