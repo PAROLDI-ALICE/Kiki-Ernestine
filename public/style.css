@@ -1,6 +1,7 @@
 * {
     margin: 0%;
 }
+/* navbar */
 .navBar {
     display: flex;
     justify-content: space-between;
@@ -17,29 +18,12 @@
     gap: 5vw;
     align-items: flex-end;
     text-decoration: none;
-}
-.kiki {
-    height: 75vh;
-}
-.article {
-    display: flex;
-    align-items: center;
-    background-color: white;
-}
-.text {
-    width: 40vw;
-    padding: 5vw;
-}
-footer {
-    color: goldenrod;
-    text-align: center;
-    background-color: black;
+    padding-right: 2vw;
 }
 button {
     background-color: black;
     color: goldenrod;
     border: none;
-    font-size: 1.25em;
 }
 button:active {
     background-color: goldenrod;
@@ -65,15 +49,49 @@ button:hover {
     max-height: 10vh;
     margin: 5vh;
 }
+/* index */
+
+.imgleft {
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 2vw;
+    max-width: 20vw;
+}
+.article {
+    display: flex;
+    background-color: white;
+}
+.text {
+    width: 40vw;
+    padding: 5vw;
+}
+.media {
+    padding-top: 5vh;
+    padding-right: 2vw;
+}
+.textright {
+    text-align: right;
+}
+/* little audio feature */
 #play-audio {
     cursor: pointer;
     width: 100%;
     max-width: 500px;
 }
-
 audio {
     display: block;
     width: 100%;
+}
+
+/* footer */
+footer {
+    color: goldenrod;
+    text-align: center;
+    background-color: black;
+    height: 10vh;
+    padding-top: 5vh;
 }
 .content {
     min-height: 70vh;
@@ -85,13 +103,19 @@ audio {
     background-position: top;
     background-size: cover;
     min-height: 70vh;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5vh;
 }
+p,
+h2 {
+    max-width: 70vw;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    padding-top: 5vh;
-    max-width: 40vw;
+    max-width: 35vw;
 }
 
 /* Media query for screens smaller than 500px */
