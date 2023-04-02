@@ -30,7 +30,7 @@ class UserController extends Controller
     public function store(Request $request) //"{{ route('store') }}" du create.blade
     {
         //Validation de la requête
-        $request->validate([
+        $validatedData = $request->validate([
             'firstname' => 'required|string',
             'lastname' => 'required|string',
             'pseudo' => 'required|string|unique:joueurs',
@@ -42,16 +42,19 @@ class UserController extends Controller
         //Création du Joueur & storage DB via Model 'joueurs'
         $user = User::create(
             [
-                'firstname' => $request->input('firstname'),
-                'lastname' => $request->input('lastname'),
-                'pseudo' => $request->input('pseudo'),
-                'email' => $request->input('email'),
-                'password' => bcrypt($request->input('password')),
+                'firstname' => $validatedData['firstname'],
+                'lastname' => $validatedData['lastname'],
+                'pseudo' => $validatedData['pseudo'],
+                'email' => $validatedData['email'],
+                'password' => bcrypt($validatedData['password']),
+                // 'lastname' => $request->lastname,
+                // => $request->input('lastname')
+                // 'pseudo' => $request->pseudo,
+                // 'email' => $request->email,
+                // 'password' => bcrypt($request->password),
             ]
-        );
+        )->save();
 
-        //Fonction SAVE
-        $user->save();
         //Redirect => Profil joueur
         return redirect()->route('users.welcome');
     }
