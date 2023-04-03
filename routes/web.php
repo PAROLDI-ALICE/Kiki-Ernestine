@@ -28,13 +28,13 @@ USER CONTROLLER => INSCRIPTION
 Route::get(
     '/',
     [UserController::class, 'index']
-);
+)->name('index');
 
 //CREATE - GET
 Route::get(
     '/create',
     [UserController::class, 'create']
-);
+)->name('create');
 
 //STORE -POST
 Route::post(
@@ -51,19 +51,19 @@ USER LOGIN => LOGIN
 Route::get(
     '/login',
     [LoginController::class, 'index']
-);
+)->name('login');
 
 // Login POST datas
 Route::post(
     '/login/sent',
     [LoginController::class, 'goLogin']
-);
+)->name('go.login');
 
 // Login vers User Profile
 Route::get(
     '/login/profile',
     [LoginController::class, 'profileConnect']
-);
+)->name('user.profile');
 
 
 
