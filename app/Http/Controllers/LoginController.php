@@ -35,12 +35,12 @@ class LoginController extends Controller
             $request->session()->regenerate();
         }
 
-        //Check dans la DB
-        User::all();
-        $user = User::where('pseudo', $validatedData['pseudo'])->first();
+        // //Check dans la DB
+        // User::all();
+        // $user = User::where('pseudo', $validatedData['pseudo'])->first();
 
         //Redirect => Profil joueur
-        return view('users.connected')->with(['user' => $user]);
+        return view('users.connected');
 
         return back()->withErrors(['email' => 'Veuillez vérifier vos coordonnées.']);
     }

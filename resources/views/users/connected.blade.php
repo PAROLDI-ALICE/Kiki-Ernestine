@@ -3,7 +3,7 @@
 @section('content')
     <!-- USER  connected-->
     <div class="registerForm">
-        <h1>Etes-vous prêt à jouer {{ $user->pseudo }}?</h1><br />
+        <h1>Etes-vous prêt à jouer?</h1><br />
         @csrf
         <p>Nous sommes heureux que vous ayez rejoint notre site et nous espérons que vous passerez un moment merveilleux
             ici. <br /><br />En créant votre personnage et en vous joignant à un groupe, vous pourrez découvrir l'univers de

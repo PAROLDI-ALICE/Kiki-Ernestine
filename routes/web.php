@@ -40,7 +40,7 @@ Route::get(
 Route::post(
     '/post',
     [UserController::class, 'store']
-);
+)->name('post.store');
 
 
 /*
