@@ -3,7 +3,7 @@
 @section('content')
     <!-- USER  REGISTERED-->
     <div class="registerForm">
-        <h1>Bienvenue {{ pseudo }}!</h1>
+        <h1>Bienvenue {{ $user->pseudo }}!</h1><br />
         @csrf
         <p>Bienvenue sur notre site dédié à l'icône française de l'art et du modèle, Kiki de Montparnasse ! <br />Kiki a été
             une
@@ -16,6 +16,7 @@
             <br /><br />Nous espérons que vous apprécierez l'expérience et que vous sortirez de notre site avec une
             compréhension
             plus profonde de l'héritage de Kiki.
-        </p>
+        </p><br />
+        <a class="submit" href="{{ route('login.index') }}">Je me connecte</a>
     </div>
 @endsection

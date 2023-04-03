@@ -51,8 +51,8 @@ class UserController extends Controller
             ]
         );
 
-        // $user->save();
-        return redirect()->route('users.profile');
+        $user->save();
+        return view('users.profile', ['user' => $user]);
     }
 
     /**
