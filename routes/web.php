@@ -35,10 +35,10 @@ Route::resource(
 
 
 // LOGGED IN
-Route::resource(
-    '/welcome',
-    LoginController::class
-);
+// Route::resource(
+//     '/welcome',
+//     LoginController::class
+// );
 
 //CREATION PERSONNAGE
 Route::resource(

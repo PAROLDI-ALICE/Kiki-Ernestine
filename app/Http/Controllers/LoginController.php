@@ -31,8 +31,8 @@ class LoginController extends Controller
         if (Auth::attempt($validatedData)) {
             $request->session()->regenerate();
         }
-        //Redirect => Profil joueur (to be created)
-        return redirect()->route('users.profile');
+        //Redirect => Profil joueur
+        // return redirect('users.connected');
 
         return back()->withErrors(['email' => 'Veuillez vérifier vos coordonnées.']);
     }
@@ -44,12 +44,11 @@ class LoginController extends Controller
     {
         //Le User est bein connecté pour éccéder à son profil
         if (Auth::attempt(['email' => $email, 'mdp' => $password, 'active' => 1])) {
-            // Authentication was successful...
         }
 
         $user = Auth::user();
-        //On retourne la vue blade profil du user avec les infos récupérer via $user directement dans la redirection
-        return view('profile')->with(['user' => $user]);
+        //Redirect => Profil joueur avec le pseudo - Start Game
+        return view('users.connected')->with(['user' => $user]);
     }
 
     /**
