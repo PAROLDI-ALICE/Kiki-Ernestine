@@ -36,7 +36,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
         }
 
-        // //Check dans la DB
+        //Check dans la DB
         // User::all();
         // $user = User::where('pseudo', $validatedData['pseudo'])->first();
 
@@ -71,9 +71,8 @@ class LoginController extends Controller
         $request->session()->invalidate();
 
         //Redirection vers index
-        return redirect('rpg.index');
+        return redirect()->route('index');
     }
-
 
     /**
      * Store a newly created resource in storage.

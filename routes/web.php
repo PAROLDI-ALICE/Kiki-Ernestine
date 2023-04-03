@@ -65,6 +65,12 @@ Route::get(
     [LoginController::class, 'profileConnect']
 )->name('user.profile');
 
+// Login vers User Profile
+Route::get(
+    '/logout',
+    [LoginController::class, 'goLogout']
+)->name('user.logout');
+
 /*
 PERSONNAGES => page de présentation
 */
@@ -113,13 +119,13 @@ Route::post(
 GROUP => inviting characters and players
 */
 //GROUP
-Route::resource(
+Route::get(
     '/group',
-    GroupController::class
-);
+    [GroupController::class, 'index']
+)->name('group.index');
 
 //CATALOGUE
-Route::resource(
-    '/charstore',
-    CharStoreController::class
-);
+// Route::get(
+//     '/group',
+//     [GroupController::class, '']
+// );
