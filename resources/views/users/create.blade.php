@@ -38,7 +38,7 @@
         <label for="email">Votre email</label>
         <input type="email" name="email" id="email"><br />
         <label for="mdp">Votre mot de passe</label>
-        <input type="mdp" name="mdp" id="password"><br />
+        <input type="password" name="mdp" id="password"><br />
         <input type="submit" class="submit" value="Valider" />
     </form>
 

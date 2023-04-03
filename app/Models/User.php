@@ -9,54 +9,58 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Model implements Authenticatable, MustVerifyEmail
+class User extends Authenticatable
+
 {
-    public function getAuthIdentifierName()
-    {
-        return 'id';
-    }
+    use HasApiTokens, HasFactory, Notifiable;
 
-    public function getAuthIdentifier()
-    {
-        return $this->getKey();
-    }
+    protected $guarded = ['id'];
 
-    public function getAuthPassword()
-    {
-        return $this->password;
-    }
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    public $fillable = [
+        'prenom',
+        'nom',
+        'pseudo',
+        'email',
+        'mdp',
+    ];
 
-    public function getRememberToken()
-    {
-        return $this->remember_token;
-    }
 
-    public function setRememberToken($value)
-    {
-        $this->remember_token = $value;
-    }
+    // public function getAuthIdentifierName()
+    // {
+    //     return 'id';
+    // }
 
-    public function getRememberTokenName()
-    {
-        return 'remember_token';
-    }
+    // public function getAuthIdentifier()
+    // {
+    //     return $this->getKey();
+    // }
+
+    // public function getAuthPassword()
+    // {
+    //     return $this->password;
+    // }
+
+    // public function getRememberToken()
+    // {
+    //     return $this->remember_token;
+    // }
+
+    // public function setRememberToken($value)
+    // {
+    //     $this->remember_token = $value;
+    // }
+
+    // public function getRememberTokenName()
+    // {
+    //     return 'remember_token';
+    // }
 }
 // {
-//     use HasApiTokens, HasFactory, Notifiable;
-//     protected $guarded = ['id'];
-
-//     /**
-//      * The attributes that are mass assignable.
-//      *
-//      * @var array<int, string>
-//      */
-//     public $fillable = [
-//         'firstname',
-//         'lastname',
-//         'pseudo',
-//         'email',
-//         'password',
-//     ];
 
 //     /**
 //      * The attributes that should be hidden for serialization.

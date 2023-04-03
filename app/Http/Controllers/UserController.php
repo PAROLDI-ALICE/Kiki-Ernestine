@@ -41,7 +41,7 @@ class UserController extends Controller
         ]);
 
         //Création du USER & storage DB 
-        $User = User::create(
+        $user = User::create(
             [
                 'prenom' => $validatedData['prenom'],
                 'nom' => $validatedData['nom'],
@@ -52,7 +52,7 @@ class UserController extends Controller
         );
 
 
-        $User->save();
+        $user->save();
         return redirect()->route('users.profile');
     }
 
