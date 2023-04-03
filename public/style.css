@@ -68,7 +68,7 @@ button:hover {
     padding: 5vw;
 }
 .media {
-    padding-top: 5vh;
+    padding-top: 10vh;
     padding-right: 2vw;
 }
 .textright {
@@ -90,11 +90,20 @@ audio {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px;
     border: 1px solid goldenrod;
     color: goldenrod;
+    background-color: white;
     font-weight: bold;
     align-self: center;
     border-radius: 50%;
     padding: 15px;
     margin-top: 2%;
+}
+.submit:active {
+    opacity: 50%;
+}
+
+.submit:hover {
+    color: white;
+    background-color: goldenrod;
 }
 
 /* footer */
@@ -106,7 +115,7 @@ footer {
     padding-top: 5vh;
 }
 .content {
-    min-height: 70vh;
+    min-height: 80vh;
 }
 .registerForm {
     display: flex;
@@ -117,7 +126,7 @@ footer {
     min-height: 70vh;
     align-items: center;
     justify-content: center;
-    padding-top: 5vh;
+    padding-top: 10vh;
 }
 p,
 h2 {
@@ -129,7 +138,9 @@ form {
     flex-direction: column;
     max-width: 35vw;
 }
-
+.intro {
+    max-width: 35vw;
+}
 /* Media query for screens smaller than 500px */
 @media (max-width: 500px) {
     #play-audio {
