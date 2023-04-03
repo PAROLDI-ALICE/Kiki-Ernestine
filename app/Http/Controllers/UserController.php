@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\User;
+use App\Models\User;
 
 
 class UserController extends Controller
@@ -41,17 +41,18 @@ class UserController extends Controller
         ]);
 
         //Création du USER & storage DB 
-        $user = User::create(
+        $User = User::create(
             [
                 'firstname' => $validatedData['firstname'],
                 'lastname' => $validatedData['lastname'],
                 'pseudo' => $validatedData['pseudo'],
                 'email' => $validatedData['email'],
-                'password' => bcrypt($validatedData['password']),
+                'password' => bcrypt($validatedData['password'])
             ]
         );
 
-        $user->save();
+
+        $User->save();
         return redirect()->route('users.profile');
     }
 
