@@ -51,8 +51,7 @@ class UserController extends Controller
             ]
         );
 
-
-        $user->save();
+        // $user->save();
         return redirect()->route('users.profile');
     }
 
