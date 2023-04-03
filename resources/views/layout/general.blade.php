@@ -27,15 +27,15 @@
     @auth
     <div class="navBar">
         <div class="left">
-            <img src="{{ asset('logo.png') }}" alt="logo" class="logo" />
-            <h1 class="bigt">La Rotonde</h1>
+            <img src="{{ asset('logo.png') }}" class="logo" />
+            <img src="{{ asset('titre.png') }}" class="rotonde" />
         </div>
         <div class="right">
             <button><a class="button-link" href="{{ route('index') }}">Salon</a></button>
             {{-- lister les personnages + creation nouveau --}}
             <button><a class="button-link" href="{{ route('character.create') }}">Personnages</a></button>
-            <button><a class="button-link" href="{{ route('group.index') }}">Groupes</a></button>
-            <button><a class="button-link" href="{{ route('user.logout') }}">Déconnexion</a></button>
+            <button><a class="button-link" href="{{ route('group.create') }}">Groupes</a></button>
+            <button>Déconnexion</button>
         </div>
     </div>
     @endauth
