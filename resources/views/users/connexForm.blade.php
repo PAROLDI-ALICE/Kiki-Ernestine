@@ -18,7 +18,7 @@
                 vibrantes et
                 excitantes de l'histoire.</h4><br /><br />
         </div>
-        <form action="{{ route('login.create') }}" method="GET">
+        <form action="{{ route('login.create') }}" method="POST">
             @csrf
             <label for="email">Votre email</label>
             <input type="email" name="email" id="email"><br />

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Http\Controllers\UserController;
+
 
 //Import of  the Auth facade 
 use Illuminate\Support\Facades\Auth;
@@ -31,8 +34,13 @@ class LoginController extends Controller
         if (Auth::attempt($validatedData)) {
             $request->session()->regenerate();
         }
+
+        //Check dans la DB
+        User::all();
+        $user = User::where('pseudo', $validatedData['pseudo'])->first();
+
         //Redirect => Profil joueur
-        // return redirect('users.connected');
+        return view('users.connected')->with(['user' => $user]);
 
         return back()->withErrors(['email' => 'Veuillez vérifier vos coordonnées.']);
     }
@@ -42,14 +50,19 @@ class LoginController extends Controller
      */
     public function profileConnect($email, $password, $user)
     {
-        //Le User est bein connecté pour éccéder à son profil
+        //Le User est bien connecté pour accéder à son profil
         if (Auth::attempt(['email' => $email, 'mdp' => $password, 'active' => 1])) {
         }
 
         $user = Auth::user();
         //Redirect => Profil joueur avec le pseudo - Start Game
-        return view('users.connected')->with(['user' => $user]);
+        return view('users.connected')->with(['user' => $user->pseudo]);
     }
+
+
+
+
+
 
     /**
      * LOGOUT

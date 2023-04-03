@@ -21,6 +21,9 @@ class Login extends Authenticatable
      * @var array<int, string>
      */
     public $fillable = [
+        'prenom',
+        'nom',
+        'pseudo',
         'email',
         'mdp',
     ];
