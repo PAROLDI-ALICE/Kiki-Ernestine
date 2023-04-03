@@ -27,8 +27,8 @@
     @auth
         <div class="navBar">
             <div class="left">
-                <img src="{{ asset('logo.png') }}" alt="logo" class="logo" />
-                <h1 class="bigt">La Rotonde</h1>
+                <img src="{{ asset('logo.png') }}" class="logo" />
+                <img src="{{ asset('titre.png') }}" class="rotonde" />
             </div>
             <div class="right">
                 <button><a class="button-link" href="{{ route('index') }}">Salon</a></button>
