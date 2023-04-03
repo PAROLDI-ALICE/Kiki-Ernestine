@@ -19,13 +19,13 @@ class LoginController extends Controller
         return view('users.connexForm');
     }
 
-    //Process d'autehntification
+    //Process d'authentification
     public function create(Request $request)
     {
         //Captation des infos USER //GET
         $validatedData = $request->validate([
             'email' => ['required', 'email'],
-            'mdp' => ['required', 'mdp']
+            'mdp' => ['required']
         ]);
 
         if (Auth::attempt($validatedData)) {
