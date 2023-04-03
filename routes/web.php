@@ -7,6 +7,7 @@ use App\Http\Controllers\AttributeController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\CharStoreController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ConnectedController;
 
 
 /*
@@ -35,10 +36,10 @@ Route::resource(
 
 
 // LOGGED IN
-// Route::resource(
-//     '/welcome',
-//     LoginController::class
-// );
+Route::resource(
+    '/connected',
+    ConnectedController::class
+);
 
 //CREATION PERSONNAGE
 Route::resource(
