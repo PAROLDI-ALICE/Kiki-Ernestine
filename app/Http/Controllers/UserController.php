@@ -32,22 +32,22 @@ class UserController extends Controller
     {
         //Validation de la requête
         $validatedData = $request->validate([
-            'firstname' => 'required|string',
-            'lastname' => 'required|string',
+            'prenom' => 'required|string',
+            'nom' => 'required|string',
             'pseudo' => 'required|string|unique:users,pseudo',
             'email' => 'required',
             //REGEX pour le password (minimum 8 caractères et comportant une lettre, un chiffre et un symbole)
-            'password' => 'required|regex:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/',
+            'mdp' => 'required|regex:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/',
         ]);
 
         //Création du USER & storage DB 
         $User = User::create(
             [
-                'firstname' => $validatedData['firstname'],
-                'lastname' => $validatedData['lastname'],
+                'prenom' => $validatedData['prenom'],
+                'nom' => $validatedData['nom'],
                 'pseudo' => $validatedData['pseudo'],
                 'email' => $validatedData['email'],
-                'password' => bcrypt($validatedData['password'])
+                'mdp' => bcrypt($validatedData['mdp'])
             ]
         );
 
