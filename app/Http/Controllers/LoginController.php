@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 //Import of  the Auth facade 
 use Illuminate\Support\Facades\Auth;
 
+
 class LoginController extends Controller
 {
     /**
@@ -28,7 +29,7 @@ class LoginController extends Controller
         //Captation des infos USER //GET
         $validatedData = $request->validate([
             'email' => ['required', 'email'],
-            'mdp' => ['required']
+            'password' => ['required']
         ]);
 
         if (Auth::attempt($validatedData)) {
@@ -48,7 +49,7 @@ class LoginController extends Controller
     /**
      * PROFIL LOGIN sous condition d'authentification
      */
-    public function profileConnect($email, $password, $user)
+    public function profileConnect($email, $password)
     {
         //Le User est bien connecté pour accéder à son profil
         if (Auth::attempt(['email' => $email, 'mdp' => $password, 'active' => 1])) {
@@ -58,11 +59,6 @@ class LoginController extends Controller
         //Redirect => Profil joueur avec le pseudo - Start Game
         return view('users.connected')->with(['user' => $user->pseudo]);
     }
-
-
-
-
-
 
     /**
      * LOGOUT
