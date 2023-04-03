@@ -23,15 +23,12 @@ class LoginController extends Controller
     public function create(Request $request)
     {
         //Captation des infos USER //GET
-        $data = $request->validate([
-            // 'firstname' => ['required', 'firstname'],
-            // 'lastname' => ['required', 'lastname'],
-            // 'pseudo' => ['required', 'pseudo'],
+        $validatedData = $request->validate([
             'email' => ['required', 'email'],
-            'password' => ['required', 'pasword']
+            'mdp' => ['required', 'mdp']
         ]);
 
-        if (Auth::attempt($data)) {
+        if (Auth::attempt($validatedData)) {
             $request->session()->regenerate();
         }
         //Redirect => Profil joueur (to be created)
@@ -46,7 +43,7 @@ class LoginController extends Controller
     public function profileConnect($email, $password, $user)
     {
         //Le User est bein connecté pour éccéder à son profil
-        if (Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1])) {
+        if (Auth::attempt(['email' => $email, 'mdp' => $password, 'active' => 1])) {
             // Authentication was successful...
         }
 
