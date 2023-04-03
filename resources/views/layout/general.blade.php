@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>La Rotonde</title>
     <link rel="stylesheet" href="{{ asset('style.css') }}">
+
 </head>
 
 <body>

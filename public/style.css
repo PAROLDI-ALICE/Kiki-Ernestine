@@ -1,6 +1,19 @@
 * {
     margin: 0%;
 }
+
+/* Creating FONT COPASETIC */
+@font-face {
+    font-family: "Copasetic";
+    src: url("/public/fonts/COPASETI.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "Copasetic";
+}
+
 /* navbar */
 .navBar {
     display: flex;
