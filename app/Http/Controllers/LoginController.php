@@ -23,7 +23,7 @@ class LoginController extends Controller
     }
 
     //Process d'authentification
-    public function create(Request $request)
+    public function goLogin(Request $request)
     {
         //Captation des infos USER //GET
         $validatedData = $request->validate([

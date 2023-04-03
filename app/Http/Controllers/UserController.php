@@ -28,7 +28,7 @@ class UserController extends Controller
     /**
      * Storage des valeurs des inputs dans la DB
      */
-    public function store(Request $request) //"{{ route('store') }}" du create.blade
+    public function store(Request $request)
     {
         //Validation de la requête
         $validatedData = $request->validate([

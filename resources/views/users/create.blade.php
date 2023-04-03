@@ -24,7 +24,7 @@
             faire partie
             de cette aventure passionnante !</p><br /><br />
     </div>
-    <form action="{{ route('store') }}" method="POST">
+    <form action="{{ route('post.store') }}" method="POST">
         @csrf
         <div>
             <label for="prenom">Votre prénom</label>

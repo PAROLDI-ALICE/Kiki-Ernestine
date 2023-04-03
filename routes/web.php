@@ -20,18 +20,51 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+/*
+USER CONTROLLER => INSCRIPTION
+*/
 
-//USER => INSCRIPTION
-Route::resource(
+//INDEX - GET
+Route::get(
     '/',
-    UserController::class
+    [UserController::class, 'index']
 );
 
-// LOGIN
-Route::resource(
-    '/login',
-    LoginController::class
+//CREATE - GET
+Route::get(
+    '/create',
+    [UserController::class, 'create']
 );
+
+//STORE -POST
+Route::post(
+    '/post',
+    [UserController::class, 'store']
+);
+
+
+/*
+USER LOGIN => LOGIN
+*/
+
+// Login form de connection
+Route::get(
+    '/login',
+    [LoginController::class, 'index']
+);
+
+// Login POST datas
+Route::post(
+    '/login/sent',
+    [LoginController::class, 'goLogin']
+);
+
+// Login vers User Profile
+Route::get(
+    '/login/profile',
+    [LoginController::class, 'profileConnect']
+);
+
 
 
 // LOGGED IN
@@ -41,25 +74,25 @@ Route::resource(
 // );
 
 //CREATION PERSONNAGE
-Route::resource(
-    '/character',
-    CharacterController::class
-);
+// Route::resource(
+//     '/character',
+//     CharacterController::class
+// );
 
-//ATTRIBUTS
-Route::resource(
-    '/attribute',
-    AttributeController::class
-);
+// //ATTRIBUTS
+// Route::resource(
+//     '/attribute',
+//     AttributeController::class
+// );
 
-//GROUP
-Route::resource(
-    '/group',
-    GroupController::class
-);
+// //GROUP
+// Route::resource(
+//     '/group',
+//     GroupController::class
+// );
 
-//CATALOGUE
-Route::resource(
-    '/charstore',
-    CharStoreController::class
-);
+// //CATALOGUE
+// Route::resource(
+//     '/charstore',
+//     CharStoreController::class
+// );
