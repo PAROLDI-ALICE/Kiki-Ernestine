@@ -3,11 +3,11 @@
 @section('content')
     <!-- FORM REGISTER CHARACTER -->
     <div class="registerForm">
-        <form action="">
-            {{-- <form action="{{ route('rpg.store') }}" method="POST"> --}}
+
+        <form action="{{ route('character.store') }}" method="POST">
             @csrf
-            <label for="name">Nom du personnage</label>
-            <input type="text" name="name" id="name">
+            <label for="nom_char">Nom du personnage</label>
+            <input type="text" name="nom_char" id="name">
             <label for="description">Votre pseudo</label>
             <select name="description" id="description">
                 <option value="">--Choississez votre artiste--</option>
@@ -19,8 +19,13 @@
                 <option value="Vaslav Nijinski">Vaslav Nijinski - le russe qui file à l'anglaise</option>
             </select>
 
+            <input type="submit" class="submit" value="Valider" />
+        </form>
 
-            <select name="specialite" id="specialite">
+
+        <form action="{{ route('attribute.store') }}" method="POST">
+            <label for="specialty">Votre spécialité</label>
+            <select name="specialty" id="specialite">
                 <option value="">--Choississez votre spécialité--</option>
                 <option value="Guerrier">Guerrier</option>
                 <option value="Mage">Mage</option>
@@ -38,9 +43,9 @@
                 <li>Intelligence : {{ $random4 }}</li>
                 <li>Points de Vie : {{ $random5 }}</li>
             </ol> --}}
-            <input type="submit" class="generate" value="Générer" />
+            <input type="submit" class="submit" value="Générer" />
 
-            <input type="submit" class="submit" value="Valider" />
+
         </form>
     </div>
 @endsection

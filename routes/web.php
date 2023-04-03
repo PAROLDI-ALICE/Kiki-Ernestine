@@ -65,34 +65,61 @@ Route::get(
     [LoginController::class, 'profileConnect']
 )->name('user.profile');
 
+/*
+PERSONNAGES => page de présentation
+*/
+// CREATION PERSONNAGE
+Route::get(
+    '/character',
+    [CharacterController::class, 'index']
+)->name('character.index');
+
+//CREATE - GET - choose your character
+Route::get(
+    '/createcharacter',
+    [CharacterController::class, 'create']
+)->name('character.create');
+
+//STORE -POST - post your character
+Route::post(
+    '/postcharacter',
+    [CharacterController::class, 'store']
+)->name('character.store');
+
+/*
+ATTRIBUTES => setting des spécialités
+*/
+
+//ATTRIBUTS
+Route::get(
+    '/attribute',
+    [attributesController::class, 'index']
+)->name('attribute.index');
+
+//CREATE - GET - choose your character
+Route::get(
+    '/createattribute',
+    [attributesController::class, 'create']
+)->name('attribute.create');
+
+//STORE -POST - post your character
+Route::post(
+    '/postattribute',
+    [attributesController::class, 'store']
+)->name('attribute.store');
 
 
-// LOGGED IN
-// Route::resource(
-//     '/welcome',
-//     LoginController::class
-// );
+/*
+GROUP => inviting characters and players
+*/
+//GROUP
+Route::resource(
+    '/group',
+    GroupController::class
+);
 
-//CREATION PERSONNAGE
-// Route::resource(
-//     '/character',
-//     CharacterController::class
-// );
-
-// //ATTRIBUTS
-// Route::resource(
-//     '/attribute',
-//     AttributeController::class
-// );
-
-// //GROUP
-// Route::resource(
-//     '/group',
-//     GroupController::class
-// );
-
-// //CATALOGUE
-// Route::resource(
-//     '/charstore',
-//     CharStoreController::class
-// );
+//CATALOGUE
+Route::resource(
+    '/charstore',
+    CharStoreController::class
+);
