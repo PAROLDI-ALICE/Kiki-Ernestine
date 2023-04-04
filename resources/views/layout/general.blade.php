@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>La Rotonde</title>
+    <title>Kiki de Montparnasse</title>
     <link rel="stylesheet" href="{{ asset('style.css') }}">
 
 </head>
@@ -54,6 +54,6 @@
         @yield('content')
     </div>
 </body>
-<footer>&copy; Kiki Ernestine 2023</footer>
+<footer>&copy; Team Kiki de Montparnasse, Nice 2023</footer>
 
 </html>

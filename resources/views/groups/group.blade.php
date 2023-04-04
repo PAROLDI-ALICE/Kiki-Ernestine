@@ -10,10 +10,10 @@
             <br />
             <input type="text" name="nom_groupe" id="nom_groupe">
             <br /><br />
-            <label for="description_groupe">Choissisez votre histoire</label>
+            <label for="description_groupe">Choisissez votre histoire</label>
             <br />
             <select name="description_groupe" id="description_groupe">
-                <option value="">--Choississez votre histoire--</option>
+                <option value="">--Kiki était...--</option>
                 <option value="Kiki la muse">
                     Kiki la muse
 
