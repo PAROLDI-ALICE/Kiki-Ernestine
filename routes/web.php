@@ -124,6 +124,18 @@ Route::get(
     [GroupController::class, 'index']
 )->name('group.index');
 
+Route::get(
+    '/group/create',
+    [GroupController::class, 'create']
+)->name('group.create');
+
+Route::post(
+    '/group/record',
+    [GroupController::class, 'store']
+)->name('group.store');
+
+
+
 //CATALOGUE
 Route::get(
     '/group/view',
