@@ -3,58 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use  Illuminate\Support\Arr;
 
 class AttributeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Random 
      */
-    public function getRandomMag()
+    public function getRandomLow()
     {
-        //Déterminer le tableau des nombres avec la fonction interne collecte
-        $array = collect()->range(0, 14);
-        $array->all();
-        return view('characters.personnage');
+        //Déterminer le tableau des nombres avec la fonction interne collecte()
+        $array1 = collect()->range(0, 14);
+        $array1->all();
+        $randomLow = Arr::random($array1, 1);
+        return $randomLow;
         // dd($array);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function getRandomFor()
+    public function getRandomHigh()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function getRandomAgy()
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function getRandomInt()
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function getRandomPv()
-    {
-        //
+        //Déterminer le tableau des nombres avec la fonction interne collecte()
+        $array2 = collect()->range(20, 50);
+        $array2->all();
+        $randomHigh = Arr::random($array2, 1);
+        return $randomHigh;
+        // dd($array);
     }
 }

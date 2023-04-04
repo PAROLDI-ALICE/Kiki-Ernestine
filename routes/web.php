@@ -97,22 +97,16 @@ ATTRIBUTES => setting des spécialités
 */
 
 //ATTRIBUTS
-Route::get(
-    '/attribute',
-    [attributesController::class, 'index']
-)->name('attribute.index');
-
-//CREATE - GET - choose your character
-Route::get(
-    '/createattribute',
-    [attributesController::class, 'create']
-)->name('attribute.create');
-
-//STORE -POST - post your character
 Route::post(
-    '/postattribute',
-    [attributesController::class, 'store']
-)->name('attribute.store');
+    '/attribute',
+    [AttributeController::class, 'getRandomLow']
+)->name('attribute.low');
+
+//STORE -POST - post your character's attributes
+Route::post(
+    '/attribute',
+    [AttributeController::class, 'getRandomHigh']
+)->name('attribute.high');
 
 
 /*
