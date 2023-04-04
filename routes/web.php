@@ -130,14 +130,14 @@ Route::get(
 )->name('group.create');
 
 Route::post(
-    '/group/record',
+    '/group/store',
     [GroupController::class, 'store']
 )->name('group.store');
 
 
 
-//CATALOGUE
-Route::get(
-    '/group/view',
-    [GroupController::class, '']
-)->name('group.create');
+// //CATALOGUE
+// Route::get(
+//     '/group/view',
+//     [GroupController::class, '']
+// )->name('group.create');

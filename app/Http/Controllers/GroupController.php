@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PHPUnit\Metadata\Api\Groups;
+use App\Models\Group;
 
 class GroupController extends Controller
 {
@@ -11,7 +13,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        return view('groups.groupe');
+        return view('groups.group');
     }
 
     /**
@@ -22,70 +24,52 @@ class GroupController extends Controller
         // Validate
         $validatedData = $request->validate(
             [
-                'name' => 'required|string',
-                'description' => 'required|string',
+                'nom_groupe' => 'required|string',
+                'description_groupe' => 'required|string',
+                'nbre_places' => 'required|integer',
             ]
         );
         //Create and store into the DB
         $group = Group::create([
             'nom_groupe' => $validatedData['name'],
             'description_groupe' => $validatedData['description'],
-
-
+            'nbre_places' => $validatedData['places'],
         ]);
-        $group->save();
         return view('groups.groupe');
     }
 
 
 
-
-
-
-
-
-
-
-
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('groups.groupe');
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
-        //
+        $group = Group::find($id);
+        return view('groups.show', ['group' => $group]);
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    // public function edit(string $id)
+    // {
+    //     //
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+    // /**
+    //  * Update the specified resource in storage.
+    //  */
+    // public function update(Request $request, string $id)
+    // {
+    //     //
+    // }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    // /**
+    //  * Remove the specified resource from storage.
+    //  */
+    // public function destroy(string $id)
+    // {
+    //     //
+    // }
 }
