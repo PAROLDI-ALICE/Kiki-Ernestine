@@ -80,12 +80,6 @@ Route::get(
     [CharacterController::class, 'index']
 )->name('character.index');
 
-//CREATE - POST - choose your character
-// Route::post(
-//     '/createcharacter',
-//     [CharacterController::class, 'store']
-// )->name('character.store');
-
 //STORE -POST - post your character
 Route::post(
     '/postcharacter',
@@ -95,14 +89,16 @@ Route::post(
 /*
 ATTRIBUTES => setting des spécialités
 */
+Route::get(
+    '/postattributes',
+    [AttributesController::class, 'index']
+)->name('attributes.index');
 
 // STORE ATTRIBUTES
 Route::post(
-    '/attribute',
-    [AttributesController::class, 'storeAttributes']
-)->name('store.attributes');
-
-
+    '/postattributes',
+    [AttributesController::class, 'store']
+)->name('attributes.store');
 
 // Route::post(
 //     '/attribute',

@@ -30,15 +30,13 @@ class CharacterController extends Controller
         );
         //Create and store into the DB
         $character = Character::create([
-            'nom_char' => $validatedData['prenom'],
+            'nom_char' => $validatedData['nom_char'],
             'description' => $validatedData['description'],
             'specialty' => $validatedData['specialty'],
-            'magie' => $validatedData['magie'],
-
-
         ]);
         $character->save();
-        return view('characters.personnage');
+        return ('Votre personnage est créé, choississez vos attributs ! ');
+        // view('characters.personnage')->with
     }
 
     /**

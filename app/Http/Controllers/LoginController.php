@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Controllers\UserController;
+use App\Models\Character;
 
 
 //Import of  the Auth facade 
@@ -36,12 +37,8 @@ class LoginController extends Controller
             $request->session()->regenerate();
         }
 
-        //Check dans la DB
-        // User::all();
-        // $user = User::where('pseudo', $validatedData['pseudo'])->first();
-
         //Redirect => Profil joueur
-        return view('users.connected');
+        return view('users.connected')->with(['Personnages' => Character::all()]);
 
         return back()->withErrors(['email' => 'Veuillez vérifier vos coordonnées.']);
     }

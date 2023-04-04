@@ -3,8 +3,8 @@
 @section('content')
 <!-- FORM REGISTER CHARACTER -->
 <div class="registerForm">
-    <form action="{{ route('character.store') }}" method="POST">
-        @csrf
+
+<!--Début du form - 'Valider les datas Character'-->
     <form action="{{ route('character.store') }}" method="POST">
         @csrf
         <label for="nom_char">Choississez un pseudo pour votre personnage</label>
@@ -19,9 +19,6 @@
             <option value="Max Ernst">Max Ernst - l'homme au regard multidimensionnel</option>
             <option value="Vaslav Nijinski">Vaslav Nijinski - le russe qui file à l'anglaise</option>
         </select>
-        {{-- <input type="submit" class="submit" value="Enregistrer" /> --}}
-    </form>
-    <form action="{{ route('character.store') }}" method="POST">
         <label for="specialty">Votre spécialité</label>
         <select name="specialty" id="specialite">
             <option value="">--Choississez votre spécialité--</option>
@@ -32,10 +29,13 @@
             <option value="Berserker">Berserker</option>
             <option value="Archer">Archer</option>
         </select>
-        {{-- <input type="submit" class="submit" value="Enregistrer" /> --}}
+<!--Submit de 'Valider les datas Character'-->
+        <input type="submit" class="submit" value="Enregistrer" />
+<!--Fin du form - 'Valider les datas Character'-->
     </form>
-    <!--Générer les attributs-->
-    <form action="{{ route('character.index') }}" method="GET">
+<!--Début du form - 'Valider les datas Attributes'-->
+<form action="{{ route('attributes.store') }}" method="POST">
+    @csrf
         <label for="magie">Magie :</label>
         <input type="text" name="magie" id="magie" value="{{  $magie =   rand(0, 14) }}" readonly="readonly">
         <br/>
@@ -51,10 +51,18 @@
         <label for="points_de_vie">Points de vie : </label>
         <input type="text" name="points_de_vie" id="points_de_vie" value="{{ $vie =   rand(20,50) }}" readonly="readonly">
         <br/>
-            <input type="submit" class="submit" value="Générer" />
-    </form>
-    <!--Validation du perso-->
+<!--Submit de 'Valider les datas Attributes'-->
     <input type="submit" class="submit" value="Enregistrer" />
-</form>
+<!--Fin du form - 'Valider les datas Attributes'-->
+        </form>
+<!--Début du global form - 'Régénérer les attributs' - retour à la page création personnage-->
+     <form action="{{ route('character.index') }}" method="GET">
+        <br/>
+<!--Submit de 'Régénérer les attributs'-->
+            <input type="submit" class="submit" value="Regénérer" />
+<!--Fin du global form  - 'Régénérer les attributs'-->
+    </form>
+    <br/>
+   
 </div>
 @endsection

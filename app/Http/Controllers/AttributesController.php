@@ -17,34 +17,36 @@ class AttributesController extends Controller
         //
         return view('character.index');
     }
+
     /**
-     * Generate random -VALIDER => STORE
+     * VALIDER => STORE
      */
-    public function storeAttributes(Request $request)
+    public function store(Request $request)
     {
         // Validate
         $validatedData = $request->validate(
             [
-                'nom_char' => 'required|string',
-                'description' => 'required|string',
-                'specialty' => 'required|string',
+                'magie' => 'required|string',
+                'force' => 'required|string',
+                'agilite' => 'required|string',
+                'intelligence' => 'required|string',
+                'points_de_vie' => 'required|string',
             ]
         );
         //Create and store into the DB
         $attributs = Attributes::create([
-            'nom_char' => $validatedData['prenom'],
-            'description' => $validatedData['description'],
-            'specialty' => $validatedData['specialty'],
             'magie' => $validatedData['magie'],
-
-
+            'force' => $validatedData['force'],
+            'agilite' => $validatedData['agilite'],
+            'intelligence' => $validatedData['intelligence'],
+            'points_de_vie' => $validatedData['points_de_vie'],
         ]);
         $attributs->save();
-        return view('characters.personnage');
+        return view('group.index')->with('Votre personnage est créé, choississez votre groupe ! ');
     }
 
     /**
-     * Trying different random methods.... :-/
+     * Trying different random methods.... :-/...
      */
     // public function getRandomLow()
     // {
