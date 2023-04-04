@@ -80,11 +80,11 @@ Route::get(
     [CharacterController::class, 'index']
 )->name('character.index');
 
-//CREATE - GET - choose your character
-Route::get(
-    '/createcharacter',
-    [CharacterController::class, 'create']
-)->name('character.create');
+//CREATE - POST - choose your character
+// Route::post(
+//     '/createcharacter',
+//     [CharacterController::class, 'store']
+// )->name('character.store');
 
 //STORE -POST - post your character
 Route::post(
@@ -125,7 +125,7 @@ Route::get(
 )->name('group.index');
 
 //CATALOGUE
-// Route::get(
-//     '/group',
-//     [GroupController::class, '']
-// );
+Route::get(
+    '/group/view',
+    [GroupController::class, '']
+)->name('group.create');

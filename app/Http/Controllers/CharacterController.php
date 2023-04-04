@@ -21,6 +21,8 @@ class CharacterController extends Controller
     // public function create()
     // {
     //     //
+
+
     // }
 
     /**
@@ -43,6 +45,7 @@ class CharacterController extends Controller
             'specialty' => $validatedData['specialty'],
         ]);
         $character->save();
+        return view('characters.personnage');
     }
 
     /**

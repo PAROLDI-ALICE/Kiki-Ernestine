@@ -33,9 +33,9 @@
         <div class="right">
             <button><a class="button-link" href="{{ route('index') }}">Salon</a></button>
             {{-- lister les personnages + creation nouveau --}}
-            <button><a class="button-link" href="{{ route('character.create') }}">Personnages</a></button>
+            <button><a class="button-link" href="{{ route('character.store') }}">Personnages</a></button>
             <button><a class="button-link" href="{{ route('group.create') }}">Groupes</a></button>
-            <button>Déconnexion</button>
+            <button><a class="button-link" href="{{ route('user.logout') }}">Déconnexion</a></button>
         </div>
     </div>
     @endauth

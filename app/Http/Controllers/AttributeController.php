@@ -9,15 +9,19 @@ class AttributeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function getRandomMag()
     {
-        //
+        //Déterminer le tableau des nombres avec la fonction interne collecte
+        $array = collect()->range(0, 14);
+        $array->all();
+        return view('characters.personnage');
+        // dd($array);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function getRandomFor()
     {
         //
     }
@@ -25,7 +29,7 @@ class AttributeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function getRandomAgy()
     {
         //
     }
@@ -33,7 +37,7 @@ class AttributeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function getRandomInt()
     {
         //
     }
@@ -49,15 +53,7 @@ class AttributeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function getRandomPv()
     {
         //
     }
