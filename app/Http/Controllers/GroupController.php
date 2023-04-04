@@ -31,11 +31,11 @@ class GroupController extends Controller
         );
         //Create and store into the DB
         $group = Group::create([
-            'nom_groupe' => $validatedData['name'],
-            'description_groupe' => $validatedData['description'],
-            'nbre_places' => $validatedData['places'],
+            'nom_groupe' => $validatedData['nom_groupe'],
+            'description_groupe' => $validatedData['description_groupe'],
+            'nbre_places' => $validatedData['nbre_places'],
         ]);
-        return view('groups.groupe');
+        return view('groups.group');
     }
 
 
