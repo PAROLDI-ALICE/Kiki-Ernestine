@@ -15,19 +15,46 @@ class GroupController extends Controller
     }
 
     /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        // Validate
+        $validatedData = $request->validate(
+            [
+                'name' => 'required|string',
+                'description' => 'required|string',
+            ]
+        );
+        //Create and store into the DB
+        $group = Group::create([
+            'nom_groupe' => $validatedData['name'],
+            'description_groupe' => $validatedData['description'],
+
+
+        ]);
+        $group->save();
+        return view('groups.groupe');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
         return view('groups.groupe');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
