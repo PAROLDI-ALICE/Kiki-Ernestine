@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CharacterController;
-use App\Http\Controllers\AttributeController;
+use App\Http\Controllers\AttributesController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\CharStoreController;
 use App\Http\Controllers\LoginController;
@@ -96,17 +96,11 @@ Route::post(
 ATTRIBUTES => setting des spécialités
 */
 
-//GENERER RANDOM
-Route::get(
-    '/attribute',
-    [AttributeController::class, 'getRandom']
-)->name('attribute.rand');
-
-//STORE CHARACTER
+// STORE ATTRIBUTES
 Route::post(
     '/attribute',
-    [AttributeController::class, 'storeCharacter']
-)->name('');
+    [AttributesController::class, 'storeAttributes']
+)->name('store.attributes');
 
 
 
@@ -120,7 +114,6 @@ Route::post(
 //     '/attribute',
 //     [AttributeController::class, 'getRandomHigh']
 // )->name('attribute.high');
-
 
 /*
 GROUP => inviting characters and players

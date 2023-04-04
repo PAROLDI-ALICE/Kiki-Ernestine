@@ -3,7 +3,8 @@
 @section('content')
 <!-- FORM REGISTER CHARACTER -->
 <div class="registerForm">
-
+    <form action="{{ route('character.store') }}" method="POST">
+        @csrf
     <form action="{{ route('character.store') }}" method="POST">
         @csrf
         <label for="nom_char">Choississez un pseudo pour votre personnage</label>
@@ -18,11 +19,9 @@
             <option value="Max Ernst">Max Ernst - l'homme au regard multidimensionnel</option>
             <option value="Vaslav Nijinski">Vaslav Nijinski - le russe qui file à l'anglaise</option>
         </select>
-
-        <input type="submit" class="submit" value="Valider" />
+        {{-- <input type="submit" class="submit" value="Enregistrer" /> --}}
     </form>
-
-    <form action="{{ route('attribute.store') }}" method="POST">
+    <form action="{{ route('character.store') }}" method="POST">
         <label for="specialty">Votre spécialité</label>
         <select name="specialty" id="specialite">
             <option value="">--Choississez votre spécialité--</option>
@@ -33,14 +32,29 @@
             <option value="Berserker">Berserker</option>
             <option value="Archer">Archer</option>
         </select>
-        <input type="submit" class="submit" value="Valider" />
+        {{-- <input type="submit" class="submit" value="Enregistrer" /> --}}
+    </form>
     <!--Générer les attributs-->
-          <p>Magie : {{  $magie =   rand(0, 14) }}</p>
-          <p>Force : {{ $force  =   rand(0, 14)}}</p>
-            <p>Agilité : {{ $agilite =   rand(0, 14) }}</p>
-            <p>Intelligence : {{ $intelligence  =   rand(0, 14)}}</p>
-            <p>Points de Vie : {{ $vie  =   rand(20,50)}}</p>
+    <form action="{{ route('character.index') }}" method="GET">
+        <label for="magie">Magie :</label>
+        <input type="text" name="magie" id="magie" value="{{  $magie =   rand(0, 14) }}" readonly="readonly">
+        <br/>
+        <label for="force">Force :</label>
+        <input type="text" name="force" id="force" value="{{  $force =   rand(0, 14) }}" readonly="readonly">
+        <br/>
+        <label for="agilite">Agilité : </label>
+        <input type="text" name="agilite" id="agilite" value="{{  $agilite =   rand(0, 14) }}" readonly="readonly">
+        <br/>
+        <label for="intelligence">Intelligence :</label>
+        <input type="text" name="intelligence" id="intelligence" value="{{ $intelligence =   rand(0, 14) }}" readonly="readonly">
+        <br/>
+        <label for="points_de_vie">Points de vie : </label>
+        <input type="text" name="points_de_vie" id="points_de_vie" value="{{ $vie =   rand(20,50) }}" readonly="readonly">
+        <br/>
             <input type="submit" class="submit" value="Générer" />
     </form>
+    <!--Validation du perso-->
+    <input type="submit" class="submit" value="Enregistrer" />
+</form>
 </div>
 @endsection

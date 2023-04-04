@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  Illuminate\Support\Arr;
+use App\Models\Attributes;
 
-class AttributeController extends Controller
+class AttributesController extends Controller
 {
     /**
      * Generate random - GENERER
@@ -14,13 +15,32 @@ class AttributeController extends Controller
     public function getRandom()
     {
         //
+        return view('character.index');
     }
     /**
      * Generate random -VALIDER => STORE
      */
-    public function storeCharacter()
+    public function storeAttributes(Request $request)
     {
-        //
+        // Validate
+        $validatedData = $request->validate(
+            [
+                'nom_char' => 'required|string',
+                'description' => 'required|string',
+                'specialty' => 'required|string',
+            ]
+        );
+        //Create and store into the DB
+        $attributs = Attributes::create([
+            'nom_char' => $validatedData['prenom'],
+            'description' => $validatedData['description'],
+            'specialty' => $validatedData['specialty'],
+            'magie' => $validatedData['magie'],
+
+
+        ]);
+        $attributs->save();
+        return view('characters.personnage');
     }
 
     /**

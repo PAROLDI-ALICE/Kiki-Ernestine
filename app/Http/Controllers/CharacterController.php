@@ -33,6 +33,9 @@ class CharacterController extends Controller
             'nom_char' => $validatedData['prenom'],
             'description' => $validatedData['description'],
             'specialty' => $validatedData['specialty'],
+            'magie' => $validatedData['magie'],
+
+
         ]);
         $character->save();
         return view('characters.personnage');
