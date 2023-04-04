@@ -5,7 +5,7 @@
 /* Creating FONT COPASETIC */
 @font-face {
     font-family: "Copasetic";
-    src: url("/public/fonts/COPASETIC.TTF") format("truetype");
+    src: url("public/fonts/Copasetic.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
