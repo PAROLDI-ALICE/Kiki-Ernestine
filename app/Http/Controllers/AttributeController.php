@@ -10,6 +10,16 @@ class AttributeController extends Controller
     /**
      * Random 
      */
+
+    public function getRandom($magie, $force, $agilite, $intelligence, $vie)
+    {
+        $magie =   rand(0, 14);
+        $force =   rand(0, 14);
+        $agilite =   rand(0, 14);
+        $intelligence =   rand(0, 14);
+        $vie =   rand(20, 50);
+    }
+
     public function getRandomLow()
     {
         //Déterminer le tableau des nombres avec la fonction interne collecte()

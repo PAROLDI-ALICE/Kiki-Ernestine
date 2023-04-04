@@ -36,19 +36,15 @@
         <input type="submit" class="submit" value="Valider" />
     </form>
     <!--Générer les attributs-->
-    <form action="{{ route('attribute.low') }}" method="POST">
+    <form action="{{ route('attribute.rand) }}" method="POST">
         <ol>
-            <li>Magie : {{ $randomLow }}</li>
-            <li>Force : {{ $randomLow }}</li>
-            <li>Agilité : {{ $randomLow }}</li>
-            <li>Intelligence : {{ $randomLow }}</li>
+            <li>Magie : {{ $magie    }}</li>
+            <li>Force : {{ $force }}</li>
+            <li>Agilité : {{ $agilite }}</li>
+            <li>Intelligence : {{ $intelligence }}</li>
+            <li>Points de Vie : {{ $vie }}</li>
             <input type="submit" class="submit" value="Générer" />
+        </ol>
     </form>
-    <form action="{{ route('attribute.high') }}" method="POST">
-        <li>Points de Vie : {{ $randomHigh }}</li>
-    </form>
-    </ol>
-
-
 </div>
 @endsection

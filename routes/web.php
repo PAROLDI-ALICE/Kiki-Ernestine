@@ -99,6 +99,11 @@ ATTRIBUTES => setting des spécialités
 //ATTRIBUTS
 Route::post(
     '/attribute',
+    [AttributeController::class, 'getRandom']
+)->name('attribute.rand');
+
+Route::post(
+    '/attribute',
     [AttributeController::class, 'getRandomLow']
 )->name('attribute.low');
 
