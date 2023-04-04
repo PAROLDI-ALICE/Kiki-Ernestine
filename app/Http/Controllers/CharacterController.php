@@ -35,8 +35,7 @@ class CharacterController extends Controller
             'specialty' => $validatedData['specialty'],
         ]);
         $character->save();
-        return ('Votre personnage est créé, choississez vos attributs ! ');
-        // view('characters.personnage')->with
+        return view('character.index')->with('Votre personnage est créé, choississez vos attributs ! ');
     }
 
     /**
