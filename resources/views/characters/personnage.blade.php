@@ -6,9 +6,9 @@
 
     <form action="{{ route('character.store') }}" method="POST">
         @csrf
-        <label for="nom_char">Nom du personnage</label>
+        <label for="nom_char">Choississez un pseudo pour votre personnage</label>
         <input type="text" name="nom_char" id="name">
-        <label for="description">Votre pseudo</label>
+        <label for="description">Description du personnage</label>
         <select name="description" id="description">
             <option value="">--Choississez votre artiste--</option>
             <option value="Andre Breton">André Breton - poète surrealiste par excellence</option>
@@ -34,17 +34,13 @@
             <option value="Archer">Archer</option>
         </select>
         <input type="submit" class="submit" value="Valider" />
-    </form>
     <!--Générer les attributs-->
-    <form action="{{ route('attribute.rand) }}" method="POST">
-        <ol>
-            <li>Magie : {{ $magie    }}</li>
-            <li>Force : {{ $force }}</li>
-            <li>Agilité : {{ $agilite }}</li>
-            <li>Intelligence : {{ $intelligence }}</li>
-            <li>Points de Vie : {{ $vie }}</li>
+          <p>Magie : {{  $magie =   rand(0, 14) }}</p>
+          <p>Force : {{ $force  =   rand(0, 14)}}</p>
+            <p>Agilité : {{ $agilite =   rand(0, 14) }}</p>
+            <p>Intelligence : {{ $intelligence  =   rand(0, 14)}}</p>
+            <p>Points de Vie : {{ $vie  =   rand(20,50)}}</p>
             <input type="submit" class="submit" value="Générer" />
-        </ol>
     </form>
 </div>
 @endsection

@@ -96,22 +96,30 @@ Route::post(
 ATTRIBUTES => setting des spécialités
 */
 
-//ATTRIBUTS
-Route::post(
+//GENERER RANDOM
+Route::get(
     '/attribute',
     [AttributeController::class, 'getRandom']
 )->name('attribute.rand');
 
+//STORE CHARACTER
 Route::post(
     '/attribute',
-    [AttributeController::class, 'getRandomLow']
-)->name('attribute.low');
+    [AttributeController::class, 'storeCharacter']
+)->name('');
 
-//STORE -POST - post your character's attributes
-Route::post(
-    '/attribute',
-    [AttributeController::class, 'getRandomHigh']
-)->name('attribute.high');
+
+
+// Route::post(
+//     '/attribute',
+//     [AttributeController::class, 'getRandomLow']
+// )->name('attribute.low');
+
+// //STORE -POST - post your character's attributes
+// Route::post(
+//     '/attribute',
+//     [AttributeController::class, 'getRandomHigh']
+// )->name('attribute.high');
 
 
 /*

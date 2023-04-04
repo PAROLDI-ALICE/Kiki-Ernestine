@@ -8,35 +8,41 @@ use  Illuminate\Support\Arr;
 class AttributeController extends Controller
 {
     /**
-     * Random 
+     * Generate random - GENERER
      */
 
-    public function getRandom($magie, $force, $agilite, $intelligence, $vie)
+    public function getRandom()
     {
-        $magie =   rand(0, 14);
-        $force =   rand(0, 14);
-        $agilite =   rand(0, 14);
-        $intelligence =   rand(0, 14);
-        $vie =   rand(20, 50);
+        //
+    }
+    /**
+     * Generate random -VALIDER => STORE
+     */
+    public function storeCharacter()
+    {
+        //
     }
 
-    public function getRandomLow()
-    {
-        //Déterminer le tableau des nombres avec la fonction interne collecte()
-        $array1 = collect()->range(0, 14);
-        $array1->all();
-        $randomLow = Arr::random($array1, 1);
-        return $randomLow;
-        // dd($array);
-    }
+    /**
+     * Trying different random methods.... :-/
+     */
+    // public function getRandomLow()
+    // {
+    //     //Déterminer le tableau des nombres avec la fonction interne collecte()
+    //     $array1 = collect()->range(0, 14);
+    //     $array1->all();
+    //     $randomLow = Arr::random($array1, 1);
+    //     return $randomLow;
+    //     // dd($array);
+    // }
 
-    public function getRandomHigh()
-    {
-        //Déterminer le tableau des nombres avec la fonction interne collecte()
-        $array2 = collect()->range(20, 50);
-        $array2->all();
-        $randomHigh = Arr::random($array2, 1);
-        return $randomHigh;
-        // dd($array);
-    }
+    // public function getRandomHigh()
+    // {
+    //     //Déterminer le tableau des nombres avec la fonction interne collecte()
+    //     $array2 = collect()->range(20, 50);
+    //     $array2->all();
+    //     $randomHigh = Arr::random($array2, 1);
+    //     return $randomHigh;
+    //     // dd($array);
+    // }
 }
