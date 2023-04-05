@@ -88,7 +88,7 @@ Route::post(
 
 //displaying characters
 Route::get(
-    '/showcharacters',
+    '/showcharacters/{id}',
     [CharacterController::class, 'show']
 )->name('show.atelier');
 

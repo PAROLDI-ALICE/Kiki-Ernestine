@@ -62,11 +62,6 @@ class CharacterController extends Controller
         $characters = Character::all($id);
         // Pass the characters to the view
         return view('users.atelier')->with(['characters' => $characters->id]);
-
-        // return view('users.atelier')
-        //     ->with([
-        //         'character' => $character->id,
-        //     ]); 
     }
 
     // /**
