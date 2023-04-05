@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- FORM Edit CHARACTER -->
-    <div class="registerGroup">
+    <div class="registerForm">
         <form action="{{ route('group.store') }}" method="POST">
             {{-- <form action="{{ route('rpg.store') }}" method="POST"> --}}
             @csrf
