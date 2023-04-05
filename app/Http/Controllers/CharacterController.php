@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Character;
+use Ramsey\Uuid\Type\Integer;
 
 class CharacterController extends Controller
 {
@@ -55,13 +56,17 @@ class CharacterController extends Controller
      * @param  Character  $character
 !     * @return \Illuminate\Http\Response
      */
-    public function show(Character $character)
+    public function show(Character $characters, string $id)
     {
-        //
-        return view('users.atelier')
-            ->with([
-                'character' => $character,
-            ]);
+        // Retrieve all characters from the database
+        $characters = Character::all($id);
+        // Pass the characters to the view
+        return view('users.atelier')->with(['characters' => $characters->id]);
+
+        // return view('users.atelier')
+        //     ->with([
+        //         'character' => $character->id,
+        //     ]); 
     }
 
     // /**

@@ -22,7 +22,8 @@
         <div>
             <h2>Je consulte mon catalogue de personnages</h2>
             <br />
-        </div>  
+        </div> 
+  @foreach ($characters as $character)     
 <div>
     <form action="{{ route('character.store') }}" method="POST">
     <ul>
@@ -43,7 +44,8 @@
     @method('DELETE')
 <input type="submit" class="submit" value="Supprimer" />
 </form>
+</form>
 </div> 
-</form>  
+@endforeach  
         </div>
 @endsection

@@ -86,15 +86,15 @@ Route::post(
     [CharacterController::class, 'store']
 )->name('character.store');
 
-
+//displaying characters
 Route::get(
-    '/showcharacter',
+    '/showcharacters',
     [CharacterController::class, 'show']
 )->name('show.atelier');
 
 //DESTROY
 Route::delete(
-    '/destroycharacter',
+    '/destroycharacter/{id}',
     [CharacterController::class, 'destroy']
 )->name('character.destroy');
 
