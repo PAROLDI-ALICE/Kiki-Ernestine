@@ -47,8 +47,7 @@ class CharacterController extends Controller
         ]);
         $character->save();
         //Retour à la vue post Login - 'Atelier' où FOREACH des $character
-        return view('users.atelier')->with(['character' => $character]);
-        // return redirect()->route('show.atelier', ['character' => $character->id]);
+        return redirect()->route('show.atelier');
     }
 
 
@@ -58,12 +57,12 @@ class CharacterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         // Retrieve all characters from the database
-        $characters = Character::all($id);
+        $characters = Character::all();
         // Pass the characters to the view
-        return view('users.atelier')->with(['characters' => $characters->id]);
+        return view('users.atelier')->with(['characters' => $characters]);
     }
 
 
