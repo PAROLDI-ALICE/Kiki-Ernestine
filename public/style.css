@@ -126,6 +126,10 @@ audio {
 .gertrude {
     display: flex;
     flex-wrap: wrap;
+    max-width: 70vw;
+}
+.leopoldine {
+    margin: 2vw;
 }
 
 li {
