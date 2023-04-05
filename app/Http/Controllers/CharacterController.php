@@ -65,6 +65,14 @@ class CharacterController extends Controller
         return view('users.atelier')->with(['characters' => $characters]);
     }
 
+    public function edit($id)
+    {
+        // Retrieve the character with the given ID
+        $characters = Character::find($id);
+    }
+
+
+
 
     public function destroy($id)
     {

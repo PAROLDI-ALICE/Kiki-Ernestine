@@ -92,6 +92,12 @@ Route::get(
     [CharacterController::class, 'show']
 )->name('show.atelier');
 
+//EDIT
+Route::get(
+    '/editcharacters/{id}',
+    [CharacterController::class, 'edit']
+)->name('character.edit');
+
 //DESTROY
 Route::delete(
     '/destroycharacter/{id}',
