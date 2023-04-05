@@ -33,8 +33,12 @@
                 <img src="{{ asset('titre.png') }}" class="rotonde" />
             </div>
             <div class="right">
-
                 <button><a class="button-link" href="{{ route('index') }}">Salon</a></button>
+                <form method="GET" action="{{ route('show.atelier') }}">
+                    @csrf
+                    <button type="submit"><a class="button-link"
+                            href="{{ route('show.atelier') }}">Atelier</a></button>
+                </form>
                 {{-- lister les personnages + creation nouveau --}}
                 <form method="POST" action="{{ route('character.index') }}">
                     @csrf

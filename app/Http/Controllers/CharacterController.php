@@ -26,6 +26,11 @@ class CharacterController extends Controller
                 'nom_char' => 'required|string',
                 'description' => 'required|string',
                 'specialty' => 'required|string',
+                'magie' => 'required|string',
+                'force' => 'required|string',
+                'agilite' => 'required|string',
+                'intelligence' => 'required|string',
+                'points_de_vie' => 'required|string',
             ]
         );
         //Create and store into the DB
@@ -33,18 +38,31 @@ class CharacterController extends Controller
             'nom_char' => $validatedData['nom_char'],
             'description' => $validatedData['description'],
             'specialty' => $validatedData['specialty'],
+            'magie' => $validatedData['magie'],
+            'force' => $validatedData['force'],
+            'agilite' => $validatedData['agilite'],
+            'intelligence' => $validatedData['intelligence'],
+            'points_de_vie' => $validatedData['points_de_vie'],
         ]);
         $character->save();
-        return view('character.index')->with('Votre personnage est créé, choississez vos attributs ! ');
+        //Retour à la vue post Login - 'Atelier' où FOREACH des $character
+        return view('users.atelier')->with(['character' => $character]);
+        // return redirect()->route('show.atelier', ['character' => $character->id]);
     }
 
     /**
      * Display the specified resource.
+     * @param  Character  $character
+!     * @return \Illuminate\Http\Response
      */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
+    public function show(Character $character)
+    {
+        //
+        return view('users.atelier')
+            ->with([
+                'character' => $character,
+            ]);
+    }
 
     // /**
     //  * Show the form for editing the specified resource.
@@ -66,8 +84,13 @@ class CharacterController extends Controller
     // /**
     //  * Remove the specified resource from storage.
     //  */
-    // public function destroy(string $id)
-    // {
-    //     //
-    // }
+    public function destroy(string $id)
+    {
+        //
+        {
+            $character = Character::find($id);
+            $character->delete();
+            return redirect()->route('show.atelier');
+        }
+    }
 }

@@ -18,5 +18,10 @@ class Character extends Model
         'nom_char',
         'description',
         'specialty',
+        'magie',
+        'force',
+        'agilite',
+        'intelligence',
+        'points_de_vie',
     ];
 }

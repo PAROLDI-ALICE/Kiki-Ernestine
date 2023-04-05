@@ -72,7 +72,7 @@ Route::get(
 )->name('user.logout');
 
 /*
-PERSONNAGES => page de présentation
+PERSONNAGES 
 */
 // CREATION PERSONNAGE
 Route::get(
@@ -86,19 +86,33 @@ Route::post(
     [CharacterController::class, 'store']
 )->name('character.store');
 
+//STORE -POST - post your character
+Route::get(
+    '/showcharacter',
+    [CharacterController::class, 'show']
+)->name('show.atelier');
+
+//DESTROY
+Route::destroy(
+    '/destroycharacter',
+    [CharacterController::class, 'destroy']
+)->name('character.destroy');
+
+
+
 /*
 ATTRIBUTES => setting des spécialités
 */
-Route::get(
-    '/postattributes',
-    [AttributesController::class, 'index']
-)->name('attributes.index');
+// Route::get(
+//     '/postattributes',
+//     [AttributesController::class, 'index']
+// )->name('attributes.index');
 
-// STORE ATTRIBUTES
-Route::post(
-    '/postattributes',
-    [AttributesController::class, 'store']
-)->name('attributes.store');
+// // STORE ATTRIBUTES
+// Route::post(
+//     '/postattributes',
+//     [AttributesController::class, 'store']
+// )->name('attributes.store');
 
 // Route::post(
 //     '/attribute',

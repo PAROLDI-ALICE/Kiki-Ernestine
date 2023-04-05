@@ -30,6 +30,11 @@ return new class extends Migration
             $table->string('nom_char')->unique();
             $table->text('description');
             $table->text('specialty');
+            $table->integer('magie');
+            $table->integer('force');
+            $table->integer('agilite');
+            $table->integer('intelligence');
+            $table->integer('points_de_vie');
             $table->unsignedBigInteger('users_id');
             $table->unsignedBigInteger('groups_id');
             // $table->foreign('users_id')->references('id')->on('users');
@@ -46,17 +51,6 @@ return new class extends Migration
             $table->unsignedBigInteger('users_id');
             // $table->foreign('characters_id')->references('id')->on('characters');
             // $table->foreign('users_id')->references('id')->on('users');
-            $table->timestamps();
-        });
-        Schema::create('attributes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('magie');
-            $table->integer('force');
-            $table->integer('agilite');
-            $table->integer('intelligence');
-            $table->integer('points_de_vie');
-            $table->unsignedBigInteger('characters_id');
-            // $table->foreign('characters_id')->references('id')->on('characters');
             $table->timestamps();
         });
     }

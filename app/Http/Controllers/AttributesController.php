@@ -25,24 +25,12 @@ class AttributesController extends Controller
     {
         // Validate
         $validatedData = $request->validate(
-            [
-                'magie' => 'required|string',
-                'force' => 'required|string',
-                'agilite' => 'required|string',
-                'intelligence' => 'required|string',
-                'points_de_vie' => 'required|string',
-            ]
+            []
         );
         //Create and store into the DB
-        $attributs = Attributes::create([
-            'magie' => $validatedData['magie'],
-            'force' => $validatedData['force'],
-            'agilite' => $validatedData['agilite'],
-            'intelligence' => $validatedData['intelligence'],
-            'points_de_vie' => $validatedData['points_de_vie'],
-        ]);
+        $attributs = Attributes::create([]);
         $attributs->save();
-        return view('group.index')->with('Votre personnage est créé, choississez votre groupe ! ');
+        return view('group.index');
     }
 
     /**

@@ -17,6 +17,33 @@
             <br />
             <a class="submit" href="{{ route('character.index') }}">Personnages</a>
             <a class="submit" href="{{ route('group.index') }}">Groupes</a>
-        </div>  
+        </div>
+        <br />
+        <div>
+            <h2>Je consulte mon catalogue de personnages</h2>
+            <br />
+        </div>   
+@foreach ($character)
+<div>
+    {{-- <form action="{{ route('character.store') }}" method="POST"> --}}
+    <ul>
+        <li>Pseudo du personnage : {{ $character->nom_char}}</li>
+        <li>Artiste : {{ $character->description }}</li>
+        <li>Description : {{ $character->specialty }}</li>
+        <li>Magie : {{ $character->magie }}</li>
+        <li>Force : {{ $character->force }}</li>
+        <li>Agilite : {{ $character->agilite }}</li>
+        <li>Intelligence : {{ $character->intelligence }}</li>
+        <li> Point de vie: {{ $character->points_de_vie }}</li>        
+</ul>
+<input type="submit" class="submit" value="Modifier" />
+ <!-- DELETE personnage-->
+<form method="post" action="{{ route('character.destroy', $character->id) }}">
+    @csrf
+    @method('DELETE')
+<input type="submit" class="submit" value="Supprimer" />
+</form>
+</div> 
+@endforeach    
         </div>
 @endsection

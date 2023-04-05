@@ -13,11 +13,5 @@ class Attributes extends Model
      *
      * @var array<int, string>
      */
-    public $fillable = [
-        'magie',
-        'force',
-        'agilite',
-        'intelligence',
-        'points_de_vie',
-    ];
+    public $fillable = [];
 }

@@ -31,7 +31,7 @@ h2 {
 .right {
     display: flex;
     justify-content: flex-end;
-    gap: 5vw;
+    gap: 2vw;
     align-items: flex-end;
     text-decoration: none;
     padding-right: 2vw;

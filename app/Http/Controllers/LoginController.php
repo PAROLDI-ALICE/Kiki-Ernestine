@@ -27,7 +27,7 @@ class LoginController extends Controller
     //Process d'authentification
     public function goLogin(Request $request)
     {
-        //Captation des infos USER //GET
+        //Captation des infos USER //POST
         $validatedData = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required']
@@ -38,7 +38,7 @@ class LoginController extends Controller
         }
 
         //Redirect => Profil joueur
-        return view('users.connected')->with(['Personnages' => Character::all()]);
+        return view('users.connected');
 
         return back()->withErrors(['email' => 'Veuillez vérifier vos coordonnées.']);
     }
