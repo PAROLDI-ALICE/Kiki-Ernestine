@@ -18,8 +18,8 @@
             plus profonde de l'héritage de Kiki.
         </p><br />
         <form method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <button type="submit"><a  href="{{ route('login') }}">Je me connecte</a></button>
-    </form>
+            @csrf
+            <button type="submit" class="submit"><a href="{{ route('login') }}">Je me connecte</a></button>
+        </form>
     </div>
 @endsection
