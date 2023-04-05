@@ -86,14 +86,14 @@ Route::post(
     [CharacterController::class, 'store']
 )->name('character.store');
 
-//STORE -POST - post your character
+
 Route::get(
     '/showcharacter',
     [CharacterController::class, 'show']
 )->name('show.atelier');
 
 //DESTROY
-Route::destroy(
+Route::delete(
     '/destroycharacter',
     [CharacterController::class, 'destroy']
 )->name('character.destroy');

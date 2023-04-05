@@ -22,10 +22,9 @@
         <div>
             <h2>Je consulte mon catalogue de personnages</h2>
             <br />
-        </div>   
-@foreach ($character)
+        </div>  
 <div>
-    {{-- <form action="{{ route('character.store') }}" method="POST"> --}}
+    <form action="{{ route('character.store') }}" method="POST">
     <ul>
         <li>Pseudo du personnage : {{ $character->nom_char}}</li>
         <li>Artiste : {{ $character->description }}</li>
@@ -36,6 +35,7 @@
         <li>Intelligence : {{ $character->intelligence }}</li>
         <li> Point de vie: {{ $character->points_de_vie }}</li>        
 </ul>
+
 <input type="submit" class="submit" value="Modifier" />
  <!-- DELETE personnage-->
 <form method="post" action="{{ route('character.destroy', $character->id) }}">
@@ -44,6 +44,6 @@
 <input type="submit" class="submit" value="Supprimer" />
 </form>
 </div> 
-@endforeach    
+</form>  
         </div>
 @endsection
