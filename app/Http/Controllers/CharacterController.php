@@ -75,6 +75,6 @@ class CharacterController extends Controller
         $characters->delete();
 
         // Redirect back to the index page
-        return redirect()->route('index');
+        return redirect()->route('show.atelier');
     }
 }

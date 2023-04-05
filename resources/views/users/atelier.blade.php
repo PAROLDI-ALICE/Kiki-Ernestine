@@ -37,15 +37,16 @@
                         <li>Intelligence : {{ $character->intelligence }}</li>
                         <li> Point de vie: {{ $character->points_de_vie }}</li>
                     </ul>
-
+                </form>
+                <form method="post" action="{{ route('character.destroy', $character->id) }}">
                     <input type="submit" class="submit" value="Modifier" />
+                </form>
                     <!-- DELETE personnage-->
                     <form method="post" action="{{ route('character.destroy', $character->id) }}">
                         @csrf
                         @method('DELETE')
                         <input type="submit" class="submit" value="Supprimer" />
                     </form>
-                </form>
             </div>
         @endforeach
     </div>
