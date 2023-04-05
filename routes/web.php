@@ -104,33 +104,6 @@ Route::delete(
     [CharacterController::class, 'destroy']
 )->name('character.destroy');
 
-
-
-/*
-ATTRIBUTES => setting des spécialités
-*/
-// Route::get(
-//     '/postattributes',
-//     [AttributesController::class, 'index']
-// )->name('attributes.index');
-
-// // STORE ATTRIBUTES
-// Route::post(
-//     '/postattributes',
-//     [AttributesController::class, 'store']
-// )->name('attributes.store');
-
-// Route::post(
-//     '/attribute',
-//     [AttributeController::class, 'getRandomLow']
-// )->name('attribute.low');
-
-// //STORE -POST - post your character's attributes
-// Route::post(
-//     '/attribute',
-//     [AttributeController::class, 'getRandomHigh']
-// )->name('attribute.high');
-
 /*
 GROUP => inviting characters and players
 */
@@ -140,17 +113,20 @@ Route::get(
     [GroupController::class, 'index']
 )->name('group.index');
 
-Route::get(
-    '/group/create',
-    [GroupController::class, 'create']
-)->name('group.create');
+// Route::get(
+//     '/group/create',
+//     [GroupController::class, 'create']
+// )->name('group.create');
 
 Route::post(
     '/group/store',
     [GroupController::class, 'store']
 )->name('group.store');
 
-
+// Route::get(
+//     '/showcharacters',
+//     [GroupController::class, 'show']
+// )->name('show.atelier');
 
 // //CATALOGUE
 // Route::get(

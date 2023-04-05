@@ -50,7 +50,6 @@ class CharacterController extends Controller
         return redirect()->route('show.atelier');
     }
 
-
     /**
      * Display the specified resource.
      *
@@ -65,24 +64,34 @@ class CharacterController extends Controller
         return view('users.atelier')->with(['characters' => $characters]);
     }
 
-    public function edit($id)
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  Character  $characters
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Character $characters)
     {
-        // Retrieve the character with the given ID
-        $characters = Character::find($id);
+        return view('characters.edit')
+            ->with(['characters' => $characters]);
     }
 
-
-
-
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  Character  $characters
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
-        // Retrieve the character with the given ID
+        //Retrieve the character with the given ID
         $characters = Character::find($id);
 
-        // Delete the character
+        //Delete the character
         $characters->delete();
 
-        // Redirect back to the index page
+        //Redirecting
         return redirect()->route('show.atelier');
     }
 }

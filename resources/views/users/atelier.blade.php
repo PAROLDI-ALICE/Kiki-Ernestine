@@ -23,6 +23,7 @@
             <h2>Je consulte mon catalogue de personnages</h2>
             <br />
         </div>
+          <!-- PERSONNAGES-->
         <div class= "gertrude">
         @foreach ($characters as $character) 
         <div>
@@ -38,7 +39,7 @@
                         <li> Point de vie: {{ $character->points_de_vie }}</li>
                     </ul>
                 </form>
-                <form method="post" action="{{ route('character.destroy', $character->id) }}">
+                <form method="post" action="{{ route('character.edit', $character->id) }}">
                     <input type="submit" class="submit" value="Modifier" />
                 </form>
                     <!-- DELETE personnage-->
@@ -50,5 +51,28 @@
             </div>
         @endforeach
     </div>
+  <!-- GROUPES-->
+    {{-- <div class= "gertrude">
+        @foreach ($groups as $group) 
+        <div>
+                <form action="{{ route('group.store') }}" method="POST">
+                    <ul>
+                        <li>Nom du groupe : {{ $group->nom_groupe }}</li>
+                        <li>Description : {{ $group->description_groupe }}</li>
+                        <li>Nombre de places : {{ $group->nbre_places }}</li>
+                    </ul>
+                </form> --}}
+                {{-- <form method="post" action="{{ route('character.destroy', $character->id) }}">
+                    <input type="submit" class="submit" value="Modifier" />
+                </form>
+                    <!-- DELETE personnage-->
+                    <form method="post" action="{{ route('character.destroy', $character->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" class="submit" value="Supprimer" />
+                    </form> --}}
+            {{-- </div>
+        @endforeach
+    </div> --}}
     </div>
 @endsection

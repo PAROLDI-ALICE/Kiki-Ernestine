@@ -21,7 +21,7 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate
+        //Validate
         $validatedData = $request->validate(
             [
                 'nom_groupe' => 'required|string',
@@ -35,19 +35,15 @@ class GroupController extends Controller
             'description_groupe' => $validatedData['description_groupe'],
             'nbre_places' => $validatedData['nbre_places'],
         ]);
-        return view('groups.group');
+        $group->save();
+        return redirect()->route('show.atelier');
     }
 
-
-
-    public function show(string $id)
+    public function show()
     {
-        $group = Group::find($id);
-        return view('groups.show', ['group' => $group]);
+        $groups = Group::all();
+        return view('users.atelier')->with(['groups' => $groups]);
     }
-
-
-
 
     /**
      * Show the form for editing the specified resource.
