@@ -23,8 +23,9 @@
             <h2>Je consulte mon catalogue de personnages</h2>
             <br />
         </div>
-        @foreach ($characters as $character)
-            <div>
+        <div class= "gertrude">
+        @foreach ($characters as $character) 
+        <div>
                 <form action="{{ route('character.store') }}" method="POST">
                     <ul>
                         <li>Pseudo du personnage : {{ $character->nom_char }}</li>
@@ -47,5 +48,6 @@
                 </form>
             </div>
         @endforeach
+    </div>
     </div>
 @endsection
