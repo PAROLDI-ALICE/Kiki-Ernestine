@@ -51,51 +51,32 @@ class CharacterController extends Controller
         // return redirect()->route('show.atelier', ['character' => $character->id]);
     }
 
+
     /**
      * Display the specified resource.
-     * @param  Character  $character
-!     * @return \Illuminate\Http\Response
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function show(Character $characters, string $id)
+    public function show($id)
     {
-        // Retrieve all characters from the database
-        $characters = Character::all($id);
-        // Pass the characters to the view
-        return view('users.atelier')->with(['characters' => $characters->id]);
+        // Retrieve the character with the given ID
+        $characters = Character::find($id);
 
-        // return view('users.atelier')
-        //     ->with([
-        //         'character' => $character->id,
-        //     ]); 
+        // Pass the character to the view
+        return view('users.show')->with(['characters' => $characters]);
     }
 
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(string $id)
-    // {
-    //     //
-    //     return view('characters.edit');
-    // }
 
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(Request $request, string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Remove the specified resource from storage.
-    //  */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
-        {
-            $character = Character::find($id);
-            $character->delete();
-            return redirect()->route('show.atelier');
-        }
+        // Retrieve the character with the given ID
+        $characters = Character::find($id);
+
+        // Delete the character
+        $characters->delete();
+
+        // Redirect back to the index page
+        return redirect()->route('index');
     }
 }
