@@ -23,59 +23,6 @@
             <h2>Je consulte mon catalogue de personnages</h2>
             <br />
         </div>
-<<<<<<< HEAD
-          <!-- PERSONNAGES-->
-        <div class= "gertrude">
-        @foreach ($characters as $character) 
-        <div>
-                <form action="{{ route('character.store') }}" method="POST">
-                    <ul>
-                        <li>Pseudo du personnage : {{ $character->nom_char }}</li>
-                        <li>Artiste : {{ $character->description }}</li>
-                        <li>Description : {{ $character->specialty }}</li>
-                        <li>Magie : {{ $character->magie }}</li>
-                        <li>Force : {{ $character->force }}</li>
-                        <li>Agilite : {{ $character->agilite }}</li>
-                        <li>Intelligence : {{ $character->intelligence }}</li>
-                        <li> Point de vie: {{ $character->points_de_vie }}</li>
-                    </ul>
-                </form>
-                <form method="post" action="{{ route('character.edit', $character->id) }}">
-                    <input type="submit" class="submit" value="Modifier" />
-                </form>
-                    <!-- DELETE personnage-->
-                    <form method="post" action="{{ route('character.destroy', $character->id) }}">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" class="submit" value="Supprimer" />
-                    </form>
-            </div>
-        @endforeach
-    </div>
-  <!-- GROUPES-->
-    {{-- <div class= "gertrude">
-        @foreach ($groups as $group) 
-        <div>
-                <form action="{{ route('group.store') }}" method="POST">
-                    <ul>
-                        <li>Nom du groupe : {{ $group->nom_groupe }}</li>
-                        <li>Description : {{ $group->description_groupe }}</li>
-                        <li>Nombre de places : {{ $group->nbre_places }}</li>
-                    </ul>
-                </form> --}}
-                {{-- <form method="post" action="{{ route('character.destroy', $character->id) }}">
-                    <input type="submit" class="submit" value="Modifier" />
-                </form>
-                    <!-- DELETE personnage-->
-                    <form method="post" action="{{ route('character.destroy', $character->id) }}">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" class="submit" value="Supprimer" />
-                    </form> --}}
-            {{-- </div>
-        @endforeach
-    </div> --}}
-=======
         <div class="gertrude">
             @foreach ($characters as $character)
                 <div>
@@ -106,6 +53,5 @@
                 </div>
             @endforeach
         </div>
->>>>>>> naomie
     </div>
 @endsection
